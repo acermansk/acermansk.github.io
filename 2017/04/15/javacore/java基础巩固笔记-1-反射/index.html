@@ -10,7 +10,7 @@
     
     <title>
         
-            categories | 
+            java基础巩固笔记(1)-反射 | 
         
         年轻人要多学习,否则就显得Navie
     </title>
@@ -32,7 +32,7 @@
     <meta name="theme-color" content="#0097A7">
     <meta name="author" content="Ac缺BFun">
     <meta name="description" content="水平太低">
-    <meta name="keywords" content="null">
+    <meta name="keywords" content="null,Java">
 
     <!-- Favicons -->
     <link rel="icon shortcut" type="image/ico" href="/img/favicon.png">
@@ -58,9 +58,9 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="https://SiTao.coding.me/hexo-blog-siztao">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="categories | 年轻人要多学习,否则就显得Navie">
+    <meta property="og:title" content="java基础巩固笔记(1)-反射 | 年轻人要多学习,否则就显得Navie">
     <meta property="og:description" content="水平太低">
-    
+    <meta property="og:article:tag" content="Java"> 
 
     <!--[if lte IE 9]>
         <link rel="stylesheet" href="/css/ie-blocker.css">
@@ -218,6 +218,41 @@
 
                     <!-- Post TOC -->
 
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+    <!-- Left aligned menu below button -->
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#java基础巩固笔记-1-反射"><span class="post-toc-number">1.</span> <span class="post-toc-text">java基础巩固笔记(1)-反射</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#反射"><span class="post-toc-number">2.</span> <span class="post-toc-text">反射</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#反射基本使用"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">反射基本使用</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#数组的反射"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">数组的反射</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#配置文件加载"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">配置文件加载</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#内省-Instropector-amp-JavaBean"><span class="post-toc-number">2.4.</span> <span class="post-toc-text">内省(Instropector) & JavaBean</span></a></li></ol></li></ol>
+
+        <!--
+        <li class="mdl-menu__item">
+            Some Action
+        </li>
+        -->
+    </ul>
+
+
+
 
 <!-- Layouts -->
 
@@ -244,7 +279,7 @@
         
     
             <p class="article-headline-p">
-                categories
+                java基础巩固笔记(1)-反射
             </p>
         </div>
 
@@ -263,7 +298,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>Ac缺BFun</strong>
-        <span>4月 14, 2017</span>
+        <span>4月 15, 2017</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -287,7 +322,7 @@
     </button>
     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
         <li class="mdl-menu__item">
-        
+        <a class="post_tag-link" href="/tags/Java/">Java</a>
     </ul>
     
 
@@ -303,7 +338,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=categories&url=https://SiTao.coding.me/hexo-blog-siztao//categories/index.html&pic=&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=java基础巩固笔记(1)-反射&url=https://SiTao.coding.me/hexo-blog-siztao//2017/04/15/javacore/java基础巩固笔记-1-反射/index.html&pic=&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 分享到微博
             </li>
@@ -312,7 +347,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=categories&url=https://SiTao.coding.me/hexo-blog-siztao//categories/index.html&via=Ac缺BFun" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=java基础巩固笔记(1)-反射&url=https://SiTao.coding.me/hexo-blog-siztao//2017/04/15/javacore/java基础巩固笔记-1-反射/index.html&via=Ac缺BFun" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Twitter
             </li>
@@ -321,7 +356,7 @@
 
     <!-- Share Facebook -->
     
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=https://SiTao.coding.me/hexo-blog-siztao//categories/index.html" target="_blank">
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=https://SiTao.coding.me/hexo-blog-siztao//2017/04/15/javacore/java基础巩固笔记-1-反射/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Facebook
             </li>
@@ -330,7 +365,7 @@
 
     <!-- Share Google+ -->
     
-        <a class="post_share-link" href="https://plus.google.com/share?url=https://SiTao.coding.me/hexo-blog-siztao//categories/index.html" target="_blank">
+        <a class="post_share-link" href="https://plus.google.com/share?url=https://SiTao.coding.me/hexo-blog-siztao//2017/04/15/javacore/java基础巩固笔记-1-反射/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Google+
             </li>
@@ -354,7 +389,90 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        
+        <h1 id="java基础巩固笔记-1-反射"><a href="#java基础巩固笔记-1-反射" class="headerlink" title="java基础巩固笔记(1)-反射"></a>java基础巩固笔记(1)-反射</h1><hr>
+<p><strong>Contents</strong></p>
+<ul>
+<li><a href="#java基础巩固笔记1-反射">java基础巩固笔记(1)-反射</a></li>
+<li><a href="#反射">反射</a><ul>
+<li><a href="#反射基本使用">反射基本使用</a></li>
+<li><a href="#数组的反射">数组的反射</a></li>
+<li><a href="#配置文件加载">配置文件加载</a></li>
+<li><a href="#内省instropector--javabean">内省(Instropector) &amp; JavaBean</a></li>
+</ul>
+</li>
+</ul>
+<hr>
+<h1 id="反射"><a href="#反射" class="headerlink" title="反射"></a>反射</h1><p><strong>反射：将类的属性和方法映射成相应的类。</strong></p>
+<h2 id="反射基本使用"><a href="#反射基本使用" class="headerlink" title="反射基本使用"></a>反射基本使用</h2><p>获取Class类的三种方法:</p>
+<ul>
+<li>类名.class</li>
+<li>对象名.getClass()</li>
+<li>Class.forName(“要加载的类名”)</li>
+</ul>
+<p>根据API写就行了，大致流程就是:</p>
+<ul>
+<li>用上述三种方式之一获取特定类的<code>Class</code>类，即该类对应的字节码</li>
+<li>调用<code>Class</code>对象的<code>getConstructor(Class&lt;?&gt;... parameterTypes)</code>获取构造方法对象</li>
+<li>调用是构造方法类<code>Constructor</code>的<code>newInstance(Object... initargs)</code>方法新建对象</li>
+<li>调用<code>Class</code>对象的<code>getMethod(String name, Class&lt;?&gt;... parameterTypes)</code>获取方法对象</li>
+<li>调用方法对象类<code>Method</code>的<code>invoke(Object obj, Object... args)</code>方法，调用对象上相应方法</li>
+</ul>
+<p><em>用方法的参数类型唯一标识一个方法,依据：方法的重载</em></p>
+<h2 id="数组的反射"><a href="#数组的反射" class="headerlink" title="数组的反射"></a>数组的反射</h2><p>下面这个例子主要说明几点：</p>
+<ul>
+<li>对于元素同类型的数组，同维数组，class一样</li>
+<li>不同维，class不同</li>
+<li>不同维的，父类都是Object,一样</li>
+<li>基本类型一维数组不能直接转换为Object[]</li>
+<li><code>java.util.Arrays</code>的<code>asList</code>方法API看看</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ReflectTest</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">        <span class="keyword">int</span> [] a1 = <span class="keyword">new</span> <span class="keyword">int</span>[]&#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>&#125;;</div><div class="line">        <span class="keyword">int</span> [] a2 = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">5</span>];</div><div class="line">        <span class="keyword">int</span> [][] a3 = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">2</span>][<span class="number">3</span>];</div><div class="line">        System.out.println(a1.getClass() == a2.getClass());<span class="comment">//true</span></div><div class="line">        System.out.println(a1.getClass());<span class="comment">//class [I</span></div><div class="line">        System.out.println(a3.getClass());<span class="comment">//class [[I</span></div><div class="line">        System.out.println(a1.getClass().getSuperclass() == a3.getClass().getSuperclass());<span class="comment">//true</span></div><div class="line">        System.out.println(a2.getClass().getSuperclass());<span class="comment">//class java.lang.Object</span></div><div class="line"></div><div class="line">        <span class="comment">//下句编译不通过：Error:(15, 42) java: 不可比较的类型: java.lang.Class&lt;capture#1, 共 ? extends int[]&gt;和java.lang.Class&lt;capture#2, 共 ? extends int[][]&gt;</span></div><div class="line">        <span class="comment">//System.out.println(a1.getClass() == a3.getClass());</span></div><div class="line"></div><div class="line">        Object []b3 = a3;<span class="comment">//通过</span></div><div class="line">        <span class="comment">//下句编译不通过   Error:(17, 24) java: 不兼容的类型: int[]无法转换为java.lang.Object[]</span></div><div class="line">        <span class="comment">//Object [] b1 = a1;</span></div><div class="line"></div><div class="line">        String s1 = <span class="string">"abc"</span>;</div><div class="line">        System.out.println(Arrays.asList(a1));<span class="comment">//[[I@1540e19d]</span></div><div class="line">        System.out.println(Arrays.asList(s1));<span class="comment">//[abc]</span></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>输出：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">true</div><div class="line">class [I</div><div class="line">class [[I</div><div class="line">true</div><div class="line">class java.lang.Object</div><div class="line">[[I@1540e19d]</div><div class="line">[abc]</div></pre></td></tr></table></figure>
+<p>乱入：<br>hashcode与内存泄露问题<br>参考java api：</p>
+<blockquote>
+<ul>
+<li>hashcode一旦生成，不要变</li>
+<li>对象equals方法返回true,则hascode要一致</li>
+<li>反之，equals方法返回false,hascode不一定互异</li>
+</ul>
+</blockquote>
+<p>如果参与hascode计算的成员变量中途发生变化，则后面remove时失败，造成内存泄露</p>
+<hr>
+<h2 id="配置文件加载"><a href="#配置文件加载" class="headerlink" title="配置文件加载"></a>配置文件加载</h2><ul>
+<li>类加载器加载只读配置文件</li>
+</ul>
+<p><code>类名.class.getClassLoader().getResourceAsStream(str);</code></p>
+<ul>
+<li>类名.class.getResourceAsStream(str),实质还是调用类加载器。<br>源码截取(java.lang包下的Class.java)：</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"> <span class="function"><span class="keyword">public</span> InputStream <span class="title">getResourceAsStream</span><span class="params">(String name)</span> </span>&#123;</div><div class="line">    name = resolveName(name);</div><div class="line">    ClassLoader cl = getClassLoader0();</div><div class="line">    <span class="keyword">if</span> (cl==<span class="keyword">null</span>) &#123;</div><div class="line">        <span class="comment">// A system class.</span></div><div class="line">        <span class="keyword">return</span> ClassLoader.getSystemResourceAsStream(name);</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> cl.getResourceAsStream(name);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>关于路径str，写法有点讲究。</p>
+<ul>
+<li>不加斜杠，相对路径:<br><code>str = &quot;config.properties&quot;;</code></li>
+<li>加斜杠，从classpath的根路径找:<br><code>str = &quot;/org/iot/ui/config.properties&quot;;</code></li>
+</ul>
+<p><em>以前编译java代码时，有些<code>conf/</code>文件夹还要添加进依赖或者标记成source文件夹，里面明明都是xml文件，没Java源码。从这里，我现在知道了，是使用反射加载配置文件的缘故</em></p>
+<hr>
+<h2 id="内省-Instropector-amp-JavaBean"><a href="#内省-Instropector-amp-JavaBean" class="headerlink" title="内省(Instropector) &amp; JavaBean"></a>内省(Instropector) &amp; JavaBean</h2><p>JavaBean读取属性x的值的流程：变大写、补前缀、获取方法。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&quot;x&quot;--&gt;&quot;X&quot;--&gt;&quot;getX&quot;--&gt;&quot;MethodGetX&quot;</div></pre></td></tr></table></figure>
+<ul>
+<li>自己用内省操作</li>
+</ul>
+<p>我目前没用上，所以不贴代码了，只附上核心类</p>
+<p>简单实现：<br>使用<code>java.beans.PropertyDescriptor</code>类</p>
+<p>麻烦实现:<br>使用<code>java.beans.Introspector</code>类,遍历<code>getBeanInfo</code>方法的返回值</p>
+<p><strong>JavaBean必须有一个不带参数的构造函数</strong></p>
+<ul>
+<li><p>使用BeanUtils工具包</p>
+<ul>
+<li>字符串和整数转换(对比(PropertyUtils)</li>
+<li>属性级联操作</li>
+<li>操作map</li>
+</ul>
+</li>
+</ul>
+
     
 
     
@@ -380,11 +498,27 @@
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
+        <a href="/2017/04/15/JDK源码分析/JDK源码分析/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            新篇
+        </a>
+    
 
     <!-- Section Spacer -->
     <div class="section-spacer"></div>
 
     <!-- Next Nav -->
+    
+        <a href="/2017/04/15/JDK源码分析/ArrayList/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
     
 </nav>
 
@@ -583,6 +717,14 @@ It will not impact the appearance and can give developers a lot of support :)
 </aside>
 
                     
+
+                    
+                        <!-- Footer Top Button -->
+                        <div class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
 
                     
 
