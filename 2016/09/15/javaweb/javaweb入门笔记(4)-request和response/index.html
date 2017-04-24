@@ -10,7 +10,7 @@
     
     <title>
         
-            java基础巩固笔记(3)-类加载器 | 
+            javaweb入门笔记(4)-request和response | 
         
         年轻人要多学习,否则就显得Navie
     </title>
@@ -32,7 +32,7 @@
     <meta name="theme-color" content="#0097A7">
     <meta name="author" content="跑的比谁都快">
     <meta name="description" content="每天进步一小步">
-    <meta name="keywords" content="null,Java">
+    <meta name="keywords" content="null,JavaWeb">
 
     <!-- Favicons -->
     <link rel="icon shortcut" type="image/ico" href="/img/favicon.png">
@@ -58,9 +58,9 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="https://SiTao.coding.me/hexo-blog-siztao">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="java基础巩固笔记(3)-类加载器 | 年轻人要多学习,否则就显得Navie">
+    <meta property="og:title" content="javaweb入门笔记(4)-request和response | 年轻人要多学习,否则就显得Navie">
     <meta property="og:description" content="每天进步一小步">
-    <meta property="og:article:tag" content="Java"> 
+    <meta property="og:article:tag" content="JavaWeb"> 
 
     <!--[if lte IE 9]>
         <link rel="stylesheet" href="/css/ie-blocker.css">
@@ -242,7 +242,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#java基础巩固笔记-3-类加载器"><span class="post-toc-number">1.</span> <span class="post-toc-text">java基础巩固笔记(3)-类加载器</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#类加载器"><span class="post-toc-number">2.</span> <span class="post-toc-text">类加载器</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#默认类加载器"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">默认类加载器</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#类加载器的委托机制"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">类加载器的委托机制</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#自定义类加载器的编写原理"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">自定义类加载器的编写原理</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#参考资料"><span class="post-toc-number">2.4.</span> <span class="post-toc-text">参考资料</span></a></li></ol></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#response"><span class="post-toc-number">1.</span> <span class="post-toc-text">response</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#输出数据"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">输出数据</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#文件下载"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">文件下载</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#随机图片"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">随机图片</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#刷新和缓存"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">刷新和缓存</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#请求重定向"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">请求重定向</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#request"><span class="post-toc-number">2.</span> <span class="post-toc-text">request</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#中文乱码"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">中文乱码</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#请求转发"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">请求转发</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#地址的写法"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">地址的写法</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#防盗链"><span class="post-toc-number">2.4.</span> <span class="post-toc-text">防盗链</span></a></li></ol></li></ol>
 
         <!--
         <li class="mdl-menu__item">
@@ -279,7 +279,7 @@
         
     
             <p class="article-headline-p">
-                java基础巩固笔记(3)-类加载器
+                javaweb入门笔记(4)-request和response
             </p>
         </div>
 
@@ -298,7 +298,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>跑的比谁都快</strong>
-        <span>4月 15, 2017</span>
+        <span>9月 15, 2016</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -322,7 +322,7 @@
     </button>
     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
         <li class="mdl-menu__item">
-        <a class="post_tag-link" href="/tags/Java/">Java</a>
+        <a class="post_tag-link" href="/tags/JavaWeb/">JavaWeb</a>
     </ul>
     
 
@@ -338,7 +338,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=java基础巩固笔记(3)-类加载器&url=https://SiTao.coding.me/hexo-blog-siztao//2017/04/15/javacore/java基础巩固笔记-3-类加载器/index.html&pic=&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=javaweb入门笔记(4)-request和response&url=https://SiTao.coding.me/hexo-blog-siztao//2016/09/15/javaweb/javaweb入门笔记(4)-request和response/index.html&pic=&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 分享到微博
             </li>
@@ -347,7 +347,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=java基础巩固笔记(3)-类加载器&url=https://SiTao.coding.me/hexo-blog-siztao//2017/04/15/javacore/java基础巩固笔记-3-类加载器/index.html&via=跑的比谁都快" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=javaweb入门笔记(4)-request和response&url=https://SiTao.coding.me/hexo-blog-siztao//2016/09/15/javaweb/javaweb入门笔记(4)-request和response/index.html&via=跑的比谁都快" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Twitter
             </li>
@@ -356,7 +356,7 @@
 
     <!-- Share Facebook -->
     
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=https://SiTao.coding.me/hexo-blog-siztao//2017/04/15/javacore/java基础巩固笔记-3-类加载器/index.html" target="_blank">
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=https://SiTao.coding.me/hexo-blog-siztao//2016/09/15/javaweb/javaweb入门笔记(4)-request和response/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Facebook
             </li>
@@ -365,7 +365,7 @@
 
     <!-- Share Google+ -->
     
-        <a class="post_share-link" href="https://plus.google.com/share?url=https://SiTao.coding.me/hexo-blog-siztao//2017/04/15/javacore/java基础巩固笔记-3-类加载器/index.html" target="_blank">
+        <a class="post_share-link" href="https://plus.google.com/share?url=https://SiTao.coding.me/hexo-blog-siztao//2016/09/15/javaweb/javaweb入门笔记(4)-request和response/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Google+
             </li>
@@ -389,70 +389,116 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <h1 id="java基础巩固笔记-3-类加载器"><a href="#java基础巩固笔记-3-类加载器" class="headerlink" title="java基础巩固笔记(3)-类加载器"></a>java基础巩固笔记(3)-类加载器</h1><hr>
-<p><strong>Contents</strong></p>
+        <p><strong>Contents</strong></p>
 <ul>
-<li><a href="#java基础巩固笔记3-类加载器">java基础巩固笔记(3)-类加载器</a></li>
-<li><a href="#类加载器">类加载器</a><ul>
-<li><a href="#默认类加载器">默认类加载器</a></li>
-<li><a href="#类加载器的委托机制">类加载器的委托机制</a></li>
-<li><a href="#自定义类加载器的编写原理">自定义类加载器的编写原理</a></li>
-<li><a href="#参考资料">参考资料</a></li>
+<li><a href="#javaweb入门笔记4-request和response">javaweb入门笔记(4)-request和response</a><ul>
+<li><a href="#response">response</a><ul>
+<li><a href="#输出数据">输出数据</a></li>
+<li><a href="#文件下载">文件下载</a></li>
+<li><a href="#随机图片">随机图片</a></li>
+<li><a href="#刷新和缓存">刷新和缓存</a></li>
+<li><a href="#请求重定向">请求重定向</a></li>
+</ul>
+</li>
+<li><a href="#request">request</a><ul>
+<li><a href="#中文乱码">中文乱码</a></li>
+<li><a href="#请求转发">请求转发</a></li>
+<li><a href="#地址的写法">地址的写法</a></li>
+<li><a href="#防盗链">防盗链</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
 <hr>
-<h1 id="类加载器"><a href="#类加载器" class="headerlink" title="类加载器"></a>类加载器</h1><p>java类加载器就是在运行时在JVM中动态地加载所需的类，java类加载器基于三个机制：委托，可见，单一。</p>
-<p>把classpath下的那些.class文件加载进内存，处理后成为字节码，这些工作是类加载器做的。</p>
-<ul>
-<li><strong>委托机制</strong>指的是将加载类的请求传递给父加载器，如果父加载器找不到或者不能加载这个类，那么再加载他。</li>
-<li><strong>可见性机制</strong>指的是父加载器加载的类都能被子加载器看见，但是子加载器加载的类父加载器是看不见的。</li>
-<li><strong>单一性机制</strong>指的是一个类只能被同一种加载器加载一次。</li>
-</ul>
-<h2 id="默认类加载器"><a href="#默认类加载器" class="headerlink" title="默认类加载器"></a>默认类加载器</h2><p>系统默认三个类加载器:</p>
-<ul>
-<li><code>BootStrap</code></li>
-<li><code>ExtClassLoader</code></li>
-<li><code>AppClassLoader</code></li>
-</ul>
-<p><em>类加载器也是java类，而BootStrap不是。</em><br>验证代码：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ClassLoaderTest</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">        System.out.println(System.class.getClassLoader());</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>输出：<code>null</code></p>
-<p>如果使用<code>System.out.println(System.class.getClassLoader().toString);</code>，则报空指针异常:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">Exception in thread &quot;main&quot; java.lang.NullPointerException</div><div class="line">	at com.iot.classloader.ClassLoaderTest.main(ClassLoaderTest.java:10)</div><div class="line">	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)</div><div class="line">	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)</div><div class="line">	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)</div><div class="line">	at java.lang.reflect.Method.invoke(Method.java:483)</div><div class="line">	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:144)</div></pre></td></tr></table></figure>
-<p>可见，System类是由BootStrap类加载器加载。</p>
-<h2 id="类加载器的委托机制"><a href="#类加载器的委托机制" class="headerlink" title="类加载器的委托机制"></a>类加载器的委托机制</h2><p>类加载器的树状图</p>
-<p><img src="http://7xph6d.com1.z0.glb.clouddn.com/javaSE_%E7%B1%BB%E5%8A%A0%E8%BD%BD%E5%99%A8%E7%BB%93%E6%9E%84%E5%9B%BE.png" alt="类加载器"></p>
-<p>一般加载类的顺序：</p>
-<ul>
-<li>首先当前线程的类加载器去加载线程中的第一个类</li>
-<li>如果类A应用了类B，java虚拟机将使用加载类A的类加载器来加载类B</li>
-<li>还可以直接调用ClassLoader.loadClass()方法来制定某个类加载器去加载某个类</li>
-</ul>
-<hr>
-<h2 id="自定义类加载器的编写原理"><a href="#自定义类加载器的编写原理" class="headerlink" title="自定义类加载器的编写原理"></a>自定义类加载器的编写原理</h2><p>API:</p>
+<p>API:</p>
 <blockquote>
-<p><a href="https://docs.oracle.com/javase/8/docs/api/index.html?java/lang/ClassLoader.html" target="_blank" rel="external">Class ClassLoader</a></p>
-</blockquote>
-<p>模板方法设计模式</p>
-<p>父类:</p>
 <ul>
-<li><code>loadClass</code>(类加载的流程，模板)</li>
-<li><code>findClass</code>供子类覆盖的、被<code>loadClass</code>方法调用的类加载逻辑</li>
-<li><code>defineClass</code>得到class文件转换成字节码</li>
-</ul>
-<p>子类:覆盖<code>findClass</code>方法</p>
-<p>例子：</p>
-<p><code>loadClass</code>方法的源码</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">protected</span> Class&lt;?&gt; loadClass(String name, <span class="keyword">boolean</span> resolve)</div><div class="line">    <span class="keyword">throws</span> ClassNotFoundException</div><div class="line">&#123;</div><div class="line">    <span class="keyword">synchronized</span> (getClassLoadingLock(name)) &#123;</div><div class="line">        <span class="comment">// First, check if the class has already been loaded</span></div><div class="line">        Class&lt;?&gt; c = findLoadedClass(name);</div><div class="line">        <span class="keyword">if</span> (c == <span class="keyword">null</span>) &#123;</div><div class="line">            <span class="keyword">long</span> t0 = System.nanoTime();</div><div class="line">            <span class="keyword">try</span> &#123;</div><div class="line">                <span class="keyword">if</span> (parent != <span class="keyword">null</span>) &#123;</div><div class="line">                    c = parent.loadClass(name, <span class="keyword">false</span>);</div><div class="line">                &#125; <span class="keyword">else</span> &#123;</div><div class="line">                    c = findBootstrapClassOrNull(name);</div><div class="line">                &#125;</div><div class="line">            &#125; <span class="keyword">catch</span> (ClassNotFoundException e) &#123;</div><div class="line">                <span class="comment">// ClassNotFoundException thrown if class not found</span></div><div class="line">                <span class="comment">// from the non-null parent class loader</span></div><div class="line">            &#125;</div><div class="line"></div><div class="line">            <span class="keyword">if</span> (c == <span class="keyword">null</span>) &#123;</div><div class="line">                <span class="comment">// If still not found, then invoke findClass in order</span></div><div class="line">                <span class="comment">// to find the class.</span></div><div class="line">                <span class="keyword">long</span> t1 = System.nanoTime();</div><div class="line">                c = findClass(name);</div><div class="line"></div><div class="line">                <span class="comment">// this is the defining class loader; record the stats</span></div><div class="line">                sun.misc.PerfCounter.getParentDelegationTime().addTime(t1 - t0);</div><div class="line">                sun.misc.PerfCounter.getFindClassTime().addElapsedTimeFrom(t1);</div><div class="line">                sun.misc.PerfCounter.getFindClasses().increment();</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">if</span> (resolve) &#123;</div><div class="line">            resolveClass(c);</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> c;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>API文档中的例子:</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">NetworkClassLoader</span> <span class="keyword">extends</span> <span class="title">ClassLoader</span> </span>&#123;</div><div class="line">     String host;</div><div class="line">     <span class="keyword">int</span> port;</div><div class="line"></div><div class="line">     <span class="function"><span class="keyword">public</span> Class <span class="title">findClass</span><span class="params">(String name)</span> </span>&#123;</div><div class="line">         <span class="keyword">byte</span>[] b = loadClassData(name);</div><div class="line">         <span class="keyword">return</span> defineClass(name, b, <span class="number">0</span>, b.length);</div><div class="line">     &#125;</div><div class="line"></div><div class="line">     <span class="keyword">private</span> <span class="keyword">byte</span>[] loadClassData(String name) &#123;</div><div class="line">         <span class="comment">// load the class data from the connection</span></div><div class="line">          . . .</div><div class="line">     &#125;</div><div class="line"> &#125;</div></pre></td></tr></table></figure>
-<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><blockquote>
-<ul>
-<li><a href="http://ju.outofmemory.cn/entry/142486" target="_blank" rel="external">java类加载机制工作原理</a></li>
-<li><a href="http://blog.csdn.net/gjanyanlig/article/details/6818655" target="_blank" rel="external">Java类加载器总结 - 寂静大海 - 博客频道 - CSDN.NET</a></li>
+<li><a href="https://tomcat.apache.org/tomcat-8.0-doc/servletapi/index.html?javax/servlet/http/HttpServletResponse.html" target="_blank" rel="external">Interface HttpServletResponse</a></li>
+<li><a href="https://tomcat.apache.org/tomcat-8.0-doc/servletapi/index.html?javax/servlet/http/HttpServletRequest.html" target="_blank" rel="external">Interface HttpServletRequest</a></li>
 </ul>
 </blockquote>
+<h2 id="response"><a href="#response" class="headerlink" title="response"></a>response</h2><h3 id="输出数据"><a href="#输出数据" class="headerlink" title="输出数据"></a>输出数据</h3><p>程序以什么码表输出，就一定要控制浏览器以什么码表打开。可有如下两种写法：</p>
+<ul>
+<li><code>response.setHeader(&quot;Content-type&quot;,&quot;text/html;charset=UTF-8&quot;)</code></li>
+<li><code>response.setContentType(&quot;text/html;charset=UTF-8&quot;)</code>(默认调用<code>setHeader</code>和<code>setCharacterEncoding</code>)</li>
+</ul>
+<p>把分号<code>;</code>错写成逗号<code>,</code>，浏览器会提示下载</p>
+<p>用html技术的<code>&lt;meta&gt;</code>标签可以模拟一个http响应头，<code>&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=UTF-8&quot;/&gt;</code></p>
+<p>response可用<code>setCharacterEncoding</code>方法设置码表。字符流输出：<code>PrintWritet-&gt;response-&gt;浏览器</code>,<code>response-&gt;浏览器</code>默认使用<code>iso-8859</code>编码</p>
+<h3 id="文件下载"><a href="#文件下载" class="headerlink" title="文件下载"></a>文件下载</h3><p>使用<code>ServerContext</code>的<code>getRealPath</code>方法,再<code>InputStream</code>和<code>OutputStream</code></p>
+<p>如果下载文件是中文名为中文，则文件名需要经过url编码<code>URLEncoder.encode</code></p>
+<h3 id="随机图片"><a href="#随机图片" class="headerlink" title="随机图片"></a>随机图片</h3><p>使用<a href="https://docs.oracle.com/javase/8/docs/api/index.html?java/awt/image/BufferedImage.html" target="_blank" rel="external"><code>BufferedImage</code></a>在内存生成图片，再使用<a href="https://docs.oracle.com/javase/8/docs/api/index.html?javax/imageio/ImageIO.html" target="_blank" rel="external"><code>ImageIO</code></a>输出。</p>
+<p>画图使用<a href="https://docs.oracle.com/javase/8/docs/api/index.html?java/awt/Graphics.html" target="_blank" rel="external"><code>Graphics</code></a>,旋转使用<a href="https://docs.oracle.com/javase/8/docs/api/index.html?java/awt/Graphics2D.html" target="_blank" rel="external"><code>Graphics2D</code></a></p>
+<p>汉字的区间：<code>\u4e00</code>-<code>\u9fa5</code></p>
+<h3 id="刷新和缓存"><a href="#刷新和缓存" class="headerlink" title="刷新和缓存"></a>刷新和缓存</h3><ul>
+<li>刷新：一般不在servlet里加<code>refresh</code>头，而是在jsp加入<code>&lt;meta&gt;</code>头模拟。</li>
+<li>缓存：加入<code>expires</code>头,当前时间+要缓存的时长</li>
+</ul>
+<h3 id="请求重定向"><a href="#请求重定向" class="headerlink" title="请求重定向"></a>请求重定向</h3><p><strong>重定向</strong>：设置状态码和<code>location</code>头即可，或者直接使用<code>response</code>的<code>sendRedirect</code>方法。向服务器两次请求。浏览器会改变地址栏，一般适用于登录、购物等场景。</p>
+<p><strong>转发</strong>:则是调用<code>ServletContex</code>对象的<code>getRequestDispatcher</code>方法，再调用<code>forward</code>方法。向服务器一次请求，浏览器地址栏不变。</p>
+<p>一些细节：</p>
+<ul>
+<li><code>getOutputStream</code>和<code>getWriter</code>方法跟别用于输出二进制数据、输出文本数据的<code>ServletOutputStream</code>、<code>Printwriter</code>对象，这两个方法相互排斥，只能调用其中一个，否则抛<code>IllegalStateException</code>异常。</li>
+<li>response的输出流会自己关闭。<code>Servlet</code>的<code>service</code>方法结束后，Servlet引擎会检查并调用<code>close</code>方法关闭该输出流对象。</li>
+</ul>
+<h2 id="request"><a href="#request" class="headerlink" title="request"></a>request</h2><ul>
+<li>URI:标识某个资源</li>
+<li>URL:标识互联网上某个资源</li>
+</ul>
+<p>一些方法</p>
+<ul>
+<li><code>getRequestURI</code>用于权限拦截，访问统计</li>
+<li><code>getRemoteAddr</code>用于得到客户机IP地址</li>
+<li><code>getMethod</code>得到客户机请求方式</li>
+</ul>
+<p>requst对象获取数据的四种方式</p>
+<ul>
+<li><code>getParameter</code></li>
+<li><code>getParameterNames</code></li>
+<li><code>getParameterValues</code></li>
+<li><code>getParameterMap</code>(可结合JavaBean使用)</li>
+</ul>
+<p>(<code>getInputStream</code>用于文件上传)</p>
+<h3 id="中文乱码"><a href="#中文乱码" class="headerlink" title="中文乱码"></a>中文乱码</h3><p>url后面如果有中文数据，需要编码后再提交</p>
+<p>表单提交的数据使用的码表和该页面的码表一致，而<code>getParameter</code>方法默认使用<code>ISO-8859</code>码表。</p>
+<p>解决：</p>
+<ul>
+<li>对于post提交的数据，在获取数据前要使用<code>request</code>对象的<code>setCharacterEncoding</code>设置码表。</li>
+<li>对于get提交的数据，只能手工解决。先对数据调用<code>getBytes(&quot;ISO-8859-1&quot;)</code>获取二进制字节，再用特定码表构建字符串。</li>
+<li>超链提交的中文，解决办法同get提交的数据。</li>
+</ul>
+<p><em>也可以通过改服务器配置来解决乱码问题，但一般<strong>不建议</strong>使用。</em></p>
+<ul>
+<li><code>URIEncoding</code>:改tomcat的配置文件<code>conf/server.xml</code>的连接器<code>&lt;Connector&gt;</code>中的<code>URIEncoding</code>属性</li>
+<li><code>useBodyEncodingForURI</code>:将<code>conf/server.xml</code>的连接器<code>&lt;Connector&gt;</code>中的<code>useBodyEncodingForURI</code>置为<code>true</code></li>
+</ul>
+<h3 id="请求转发"><a href="#请求转发" class="headerlink" title="请求转发"></a>请求转发</h3><p>应用场景：MVC设计模式</p>
+<ul>
+<li>model : javabean;</li>
+<li>view : jsp;</li>
+<li>controller : servlet</li>
+</ul>
+<p>使用request域对象把数据带给转发资源。调用<code>request</code>对象的<code>getRequestDispatcher</code>方法，再调用<code>forward</code>方法。一次请求，浏览器地址栏不变。</p>
+<p><code>forward</code>一些细节</p>
+<ul>
+<li>不能在关闭输出流后再调用转发，也不能调用两次，否则会抛出异常。</li>
+<li>跳转之前会清空response中的数据。即数据只是写入到缓冲区而没真正输出到客户端，则可调用<code>forward</code>方法，原来写入到缓冲区的内容被清空，但响应头字段信息保持。</li>
+</ul>
+<p><code>include</code>方法可以用于包含一些公共页面(一般不在servlet中包含)</p>
+<h3 id="地址的写法"><a href="#地址的写法" class="headerlink" title="地址的写法"></a>地址的写法</h3><p>以斜杠<code>/</code>开头。如果是给服务器用，则<code>/</code>代表当前web应用；如果给浏览器用，则<code>/</code>代表网站。</p>
+<p>例子:目录结构如下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">mail---------------------------Web应用所在目录</div><div class="line">           |----form1.html</div><div class="line">           |----WEB-INF目录</div><div class="line">                    |---------classes目录</div><div class="line">                    |---------lib目录</div><div class="line">                    |---------web.xml</div></pre></td></tr></table></figure>
+<ol>
+<li><code>request.getRequestDispatcher(&quot;/form1.html&quot;)</code></li>
+<li><code>response.sendRedirect(&quot;mail/form1.html&quot;)</code></li>
+<li><code>this.getServletContext().getRealPath(&quot;/form1.html&quot;)</code></li>
+<li><code>this.getServletContext().getResourceAsStream(&quot;/form1.html&quot;)</code></li>
+<li><code>&lt;a href=&quot;/mail/form1.html&quot;&gt;</code></li>
+<li><code>&lt;form action=&quot;/mail/form1.html&quot;&gt;</code></li>
+</ol>
+<p>其中，1,3,4是给服务器用;2,5,6是浏览器用</p>
+<h3 id="防盗链"><a href="#防盗链" class="headerlink" title="防盗链"></a>防盗链</h3><p>读取<code>referer</code>请求头，不合要求则重定向。</p>
 <hr>
 
     
@@ -480,7 +526,7 @@
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/2017/04/15/javacore/java基础巩固笔记-2-泛型/" id="post_nav-newer" class="prev-content">
+        <a href="/2016/08/15/javaweb/javaweb入门笔记(5)-cookie和session/" id="post_nav-newer" class="prev-content">
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
                 <i class="material-icons">arrow_back</i>
             </button>
@@ -494,7 +540,7 @@
 
     <!-- Next Nav -->
     
-        <a href="/2017/04/15/javacore/java基础巩固笔记-4-代理/" id="post_nav-older" class="next-content">
+        <a href="/2017/04/15/javacore/java基础巩固笔记-1-反射/" id="post_nav-older" class="next-content">
             旧篇
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">

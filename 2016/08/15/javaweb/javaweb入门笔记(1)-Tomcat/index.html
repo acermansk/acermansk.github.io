@@ -10,7 +10,7 @@
     
     <title>
         
-            javaweb入门笔记(3)-Servlet | 
+            javaweb入门笔记(1)-Tomcat | 
         
         年轻人要多学习,否则就显得Navie
     </title>
@@ -30,8 +30,8 @@
     <meta http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#0097A7">
-    <meta name="author" content="Ac缺BFun">
-    <meta name="description" content="水平太低">
+    <meta name="author" content="跑的比谁都快">
+    <meta name="description" content="每天进步一小步">
     <meta name="keywords" content="null,JavaWeb">
 
     <!-- Favicons -->
@@ -58,8 +58,8 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="https://SiTao.coding.me/hexo-blog-siztao">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="javaweb入门笔记(3)-Servlet | 年轻人要多学习,否则就显得Navie">
-    <meta property="og:description" content="水平太低">
+    <meta property="og:title" content="javaweb入门笔记(1)-Tomcat | 年轻人要多学习,否则就显得Navie">
+    <meta property="og:description" content="每天进步一小步">
     <meta property="og:article:tag" content="JavaWeb"> 
 
     <!--[if lte IE 9]>
@@ -242,7 +242,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#servlet入门"><span class="post-toc-number">1.</span> <span class="post-toc-text">servlet入门</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#手动编写第一个servlet"><span class="post-toc-number">2.</span> <span class="post-toc-text">手动编写第一个servlet</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#servlet的调用过程和生命周期"><span class="post-toc-number">3.</span> <span class="post-toc-text">servlet的调用过程和生命周期</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#servlet开发的一些细节"><span class="post-toc-number">4.</span> <span class="post-toc-text">servlet开发的一些细节</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#ServletContext"><span class="post-toc-number">5.</span> <span class="post-toc-text">ServletContext</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#参考链接"><span class="post-toc-number">6.</span> <span class="post-toc-text">参考链接</span></a></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Tomcat目录层次结构"><span class="post-toc-number">1.</span> <span class="post-toc-text">Tomcat目录层次结构</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#启动Tomcat"><span class="post-toc-number">2.</span> <span class="post-toc-text">启动Tomcat</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#官当配置文档"><span class="post-toc-number">3.</span> <span class="post-toc-text">官当配置文档</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#web应用"><span class="post-toc-number">4.</span> <span class="post-toc-text">web应用</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Tomcat体系结构"><span class="post-toc-number">5.</span> <span class="post-toc-text">Tomcat体系结构</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#相关小知识"><span class="post-toc-number">6.</span> <span class="post-toc-text">相关小知识</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#参考链接"><span class="post-toc-number">7.</span> <span class="post-toc-text">参考链接</span></a></li></ol>
 
         <!--
         <li class="mdl-menu__item">
@@ -279,7 +279,7 @@
         
     
             <p class="article-headline-p">
-                javaweb入门笔记(3)-Servlet
+                javaweb入门笔记(1)-Tomcat
             </p>
         </div>
 
@@ -297,8 +297,8 @@
     </div>
     <!-- Author Name & Date -->
     <div>
-        <strong>Ac缺BFun</strong>
-        <span>4月 15, 2017</span>
+        <strong>跑的比谁都快</strong>
+        <span>8月 15, 2016</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -338,7 +338,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=javaweb入门笔记(3)-Servlet&url=https://SiTao.coding.me/hexo-blog-siztao//2017/04/15/javaweb/javaweb入门笔记(3)-Servlet/index.html&pic=&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=javaweb入门笔记(1)-Tomcat&url=https://SiTao.coding.me/hexo-blog-siztao//2016/08/15/javaweb/javaweb入门笔记(1)-Tomcat/index.html&pic=&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 分享到微博
             </li>
@@ -347,7 +347,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=javaweb入门笔记(3)-Servlet&url=https://SiTao.coding.me/hexo-blog-siztao//2017/04/15/javaweb/javaweb入门笔记(3)-Servlet/index.html&via=Ac缺BFun" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=javaweb入门笔记(1)-Tomcat&url=https://SiTao.coding.me/hexo-blog-siztao//2016/08/15/javaweb/javaweb入门笔记(1)-Tomcat/index.html&via=跑的比谁都快" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Twitter
             </li>
@@ -356,7 +356,7 @@
 
     <!-- Share Facebook -->
     
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=https://SiTao.coding.me/hexo-blog-siztao//2017/04/15/javaweb/javaweb入门笔记(3)-Servlet/index.html" target="_blank">
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=https://SiTao.coding.me/hexo-blog-siztao//2016/08/15/javaweb/javaweb入门笔记(1)-Tomcat/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Facebook
             </li>
@@ -365,7 +365,7 @@
 
     <!-- Share Google+ -->
     
-        <a class="post_share-link" href="https://plus.google.com/share?url=https://SiTao.coding.me/hexo-blog-siztao//2017/04/15/javaweb/javaweb入门笔记(3)-Servlet/index.html" target="_blank">
+        <a class="post_share-link" href="https://plus.google.com/share?url=https://SiTao.coding.me/hexo-blog-siztao//2016/08/15/javaweb/javaweb入门笔记(1)-Tomcat/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Google+
             </li>
@@ -391,80 +391,91 @@
     
         <p><strong>Contents</strong></p>
 <ul>
-<li><a href="#javaweb入门笔记3-servlet">javaweb入门笔记(3)-Servlet</a><ul>
-<li><a href="#servlet入门">servlet入门</a></li>
-<li><a href="#手动编写第一个servlet">手动编写第一个servlet</a></li>
-<li><a href="#servlet的调用过程和生命周期">servlet的调用过程和生命周期</a></li>
-<li><a href="#servlet开发的一些细节">servlet开发的一些细节</a></li>
-<li><a href="#servletcontext">ServletContext</a></li>
+<li><a href="#javaweb入门笔记1-tomcat">javaweb入门笔记(1)-Tomcat</a><ul>
+<li><a href="#tomcat目录层次结构">Tomcat目录层次结构</a></li>
+<li><a href="#启动tomcat">启动Tomcat</a></li>
+<li><a href="#官当配置文档">官当配置文档</a></li>
+<li><a href="#web应用">web应用</a></li>
+<li><a href="#tomcat体系结构">Tomcat体系结构</a></li>
+<li><a href="#相关小知识">相关小知识</a></li>
 <li><a href="#参考链接">参考链接</a></li>
 </ul>
 </li>
 </ul>
 <hr>
-<h2 id="servlet入门"><a href="#servlet入门" class="headerlink" title="servlet入门"></a>servlet入门</h2><p>开发步骤：</p>
-<ul>
-<li>编写一个java类，实现servlet接口</li>
-<li>把开发好的java类部署到web服务器</li>
-</ul>
-<p>API文档</p>
+<p>下载链接</p>
 <blockquote>
-<p><a href="https://tomcat.apache.org/tomcat-8.0-doc/servletapi/index.html" target="_blank" rel="external">Servlet API Documentation</a></p>
+<ul>
+<li><a href="http://jakarta.apache.org" target="_blank" rel="external">Apache Jakarta Project</a></li>
+<li><a href="http://tomcat.apache.org/" target="_blank" rel="external">Tomcat官网</a></li>
+</ul>
 </blockquote>
-<p>生命周期相关方法(life-cycle methods)</p>
-<p>Servlet的生命周期通过<code>java.servlet.Servlet</code>接口中的<code>init()</code>、<code>service()</code>、和<code>destroy()</code>方法表示。Servlet的生命周期有四个阶段：加载并实例化、初始化、请求处理、销毁。（见文末【参考链接】）</p>
-<h2 id="手动编写第一个servlet"><a href="#手动编写第一个servlet" class="headerlink" title="手动编写第一个servlet"></a>手动编写第一个servlet</h2><p>1.在tomcat中新建一个web应用<code>hello</code>，在web应用中新建一个<code>WEB-INF/classes</code>目录</p>
-<p>2.在<code>classes</code>目录新建一个<code>FirstServlet</code></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> org.iot;</div><div class="line"></div><div class="line"><span class="keyword">import</span> java.io.*;</div><div class="line"><span class="keyword">import</span> javax.servlet.*;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">FirstServlet</span> <span class="keyword">extends</span> <span class="title">GenericServlet</span></span>&#123;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">service</span><span class="params">(ServletRequest req,ServletResponse res)</span><span class="keyword">throws</span> ServletException,java.io.IOException</span>&#123;</div><div class="line">		OutputStream out = res.getOutputStream();</div><div class="line">		out.write(<span class="string">"hello servlet!!!"</span>.getBytes());</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>3.编译，<code>javac -cp %CATALINA_HOME%/lib/servlet-api.jar  -d . FirstServlet.java</code>,命令行手动编译参考<a href="http://www.iitshare.com/under-the-cmd-compile-the-java.html" target="_blank" rel="external">这里</a></p>
-<p>4.在<code>WEB-INF</code>目录中新建一个<code>web.xml</code>文件，配置servlet的对外访问路径</p>
-<p>5.启动tomcat访问</p>
-<h2 id="servlet的调用过程和生命周期"><a href="#servlet的调用过程和生命周期" class="headerlink" title="servlet的调用过程和生命周期"></a>servlet的调用过程和生命周期</h2><p>时序图</p>
-<p><img src="http://7xph6d.com1.z0.glb.clouddn.com/javaweb_servlet-lifecycle.png" alt="servlet的调用过程和生命周期"></p>
-<h2 id="servlet开发的一些细节"><a href="#servlet开发的一些细节" class="headerlink" title="servlet开发的一些细节"></a>servlet开发的一些细节</h2><ul>
-<li><strong>标签</strong>:<code>&lt;servlet&gt;</code>包含<code>&lt;servlet-name&gt;</code>和<code>&lt;servlet-class&gt;</code>；<code>&lt;servlet-mapping&gt;</code>包含<code>&lt;servlet-name&gt;</code>和<code>&lt;url-pattern&gt;</code></li>
-<li><strong>映射</strong>:<code>web.xml</code>中一个<code>&lt;servlet&gt;</code>可对应多个<code>&lt;servlet-mapping&gt;</code></li>
-<li><strong>通配符</strong>:<code>&lt;servlet-mapping&gt;</code>的<code>&lt;url-pattern&gt;</code>可以使用通配符，两种固定格式：<code>*.扩展名</code>；以<code>/</code>开头，以<code>/*</code>结尾</li>
+<h2 id="Tomcat目录层次结构"><a href="#Tomcat目录层次结构" class="headerlink" title="Tomcat目录层次结构"></a>Tomcat目录层次结构</h2><ul>
+<li>bin:存放启动和关闭Tomcat的脚本文件</li>
+<li>conf:存放Tomcat服务器的配置文件</li>
+<li>lib:存放Tomcat服务器的支撑jar包</li>
+<li>logs:存放Tomcat的日志文件</li>
+<li>temp:存放Tomcat运行时产生的临时文件</li>
+<li>webapps:web应用所在的目录，即供外接访问的web资源的存放目录</li>
+<li>work:Tomcat的工作目录</li>
 </ul>
-<p><img src="http://7xph6d.com1.z0.glb.clouddn.com/javaweb_servlet-url%E5%8C%B9%E9%85%8D.png" alt="javaweb_servlet-url匹配.png"></p>
+<p>上面的内容直接可在<a href="http://tomcat.apache.org/tomcat-8.0-doc/introduction.html#Terminology" target="_blank" rel="external">Tomcat Doc-Directories and Files</a>找到答案</p>
+<h2 id="启动Tomcat"><a href="#启动Tomcat" class="headerlink" title="启动Tomcat"></a>启动Tomcat</h2><p><code>%CATALINA_HOME%/RUNNING.txt</code>有详细步骤，简单来说，已经配置好JDK环境的话，windows下直接双击<code>bin/startyp.bat</code>就行了</p>
+<p>默认端口是8080，改端口：tomcat的<code>conf/server.xml</code>的<code>Connector</code>标签</p>
+<p>常见启动问题</p>
 <ul>
-<li><strong>对象</strong>:servlet由servlet引擎调用，不能独立运行。客户端多次请求，服务器只创建一个servlet实例，之后驻留内存中继续服务直至web容器退出才销毁它。</li>
-<li><strong>请求</strong>:服务器针对客户端的每一次请求都会创建新的<code>request</code>和<code>response</code>对象(它们的生命周期很短)，传给<code>service</code>方法。</li>
-<li><strong>加载</strong>:servlet实例的创建和<code>init</code>方法的调用是在第一次请求时，而非服务器启动时，除非在<code>&lt;servlet&gt;</code>标签配置<code>&lt;load-on-start-up&gt;</code>,数字越小优先级越高</li>
-<li><strong>缺省</strong>:映射路径为正斜杠<code>/</code>，则为当前web应用的缺省servlet,不匹配的都交给缺省</li>
-<li><strong>线程安全</strong>:访问同一资源会引发线程安全问题; <code>SingleThreadModel</code>标记接口(已弃用)</li>
-<li><strong>ServletConfig</strong>:在<code>&lt;servlet&gt;</code>标签配置<code>&lt;init-param&gt;</code>，通过<code>getServletConfig</code>方法获得配置。可配置输出字符集，读哪个配置文件等等。</li>
-<li><strong>ServletContext</strong>:代表当前web应用，含有一些web应用全局性方法，实现web资源共享、servlet转发等。通过<code>ServletConfig.getServletContext</code>方法获得，在<code>&lt;context-param&gt;</code>标签配置。</li>
+<li>JAVA_HOME环境变量</li>
+<li>端口占用问题</li>
+<li>Catalina_home环境变量的设置问题</li>
 </ul>
-<h2 id="ServletContext"><a href="#ServletContext" class="headerlink" title="ServletContext"></a>ServletContext</h2><p>API:<a href="https://tomcat.apache.org/tomcat-8.0-doc/servletapi/index.html?javax/servlet/ServletContext.html" target="_blank" rel="external">Interface ServletContext</a></p>
-<p>概念</p>
-<p>一个web应用所有servlet共享同一个ServletContext对象，可实现数据共享。ServletContext被称为context<strong>域</strong>对象。</p>
-<p>域：作用范围；context域：整个应用程序范围。</p>
-<p>ServletContext域：</p>
-<ol>
-<li>这是一个容器</li>
-<li>说明了这个容器的作用范围，也就是应用程序范围</li>
-</ol>
-<p>转发:客户机一次请求；重定向：客户机两次请求</p>
-<p>作用</p>
+<h2 id="官当配置文档"><a href="#官当配置文档" class="headerlink" title="官当配置文档"></a>官当配置文档</h2><p>多种配置方式</p>
 <ul>
-<li>获取web应用的初始化参数</li>
-<li>实现servlet转发</li>
-<li>利用ServletContext对象读取资源文件<ul>
-<li>获得文件路径</li>
-<li>读取资源文件的三种方式</li>
-<li>.properties文件（属性文件）</li>
+<li><code>/META-INF/context.xml</code></li>
+<li><code>$CATALINA_BASE/conf/[enginename]/[hostname]/</code></li>
+<li><code>conf/server.xml</code></li>
 </ul>
-</li>
+<blockquote>
+<p>具体参考<a href="http://tomcat.apache.org/tomcat-8.0-doc/config/context.html#Defining_a_context" target="_blank" rel="external">Context配置</a></p>
+</blockquote>
+<h2 id="web应用"><a href="#web应用" class="headerlink" title="web应用"></a>web应用</h2><p>1.web应用与web应用所在的目录<br>一个<strong>web应用</strong>由多个静态web资源和动态web资源组成；组成web应用的这些文件会由一个目录组织起来，这个目录称为<strong>web应用所在目录</strong></p>
+<p>2.虚拟目录的映射<br>把主机上的资源映射到服务器对外提供的访问路径上</p>
+<p>3.例子</p>
+<p>tomcat的<code>conf/server.xml</code>:<code>&lt;Host&gt;</code>元素-&gt;<code>&lt;Context&gt;</code>,一个<code>&lt;Context&gt;</code>对应一个web应用。</p>
+<p><code>&lt;Context path=&quot;/virtual-path&quot; docBase=&quot;webapps-path&quot; /&gt;</code>,重启web服务器</p>
+<p>4.web应用的组成结构</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">mail---------------------------Web应用所在目录</div><div class="line">           |----html、jsp、css、js等文件，根目录下的文件外界可以直接访问</div><div class="line">           |----WEB-INF目录</div><div class="line">                    |---------classes目录(java类)</div><div class="line">                    |---------lib目录(java类运行所需的jar包)</div><div class="line">                    |---------web.xml(web应用的配置文件)</div><div class="line">             WEB-INF 这个目录下的文件外界无法直接访问，由web服务器负责调用</div></pre></td></tr></table></figure>
+<h2 id="Tomcat体系结构"><a href="#Tomcat体系结构" class="headerlink" title="Tomcat体系结构"></a>Tomcat体系结构</h2><p><img src="http://7xph6d.com1.z0.glb.clouddn.com/javaweb_tomcat%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84.png" alt="Tomcat体系结构"></p>
+<ul>
+<li>tomcat的https连接器</li>
 </ul>
-<p>配置文件：properties文件和xml文件；数据有关系使用xml文件，没有关系则使用properties文件。</p>
-<p>1.通过<code>ServletContext</code>的<code>getResourceAsStream</code>方法，读取properties文件</p>
-<p>模板代码(注意文件位置不同写路径会不同)：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">InputStream in = <span class="keyword">this</span>.getServletContext().getResourceAsStream(<span class="string">"/WEB-INF/classes/org/iot/servlet/db.properties"</span>);</div><div class="line">Properties properties = <span class="keyword">new</span> Properties();<span class="comment">//map</span></div><div class="line">properties.load(in);</div></pre></td></tr></table></figure>
-<p>2.通过<code>servletContext</code>的<code>getRealPath</code>方法得到资源的绝对路径，再通过传统方式(<code>FileInputStream</code>)读取</p>
-<p>3.通过类装载器去读，<code>ClassLoader</code>的<code>getResourceAsStream</code>(如果读取资源文件的程序不是servlet)，文件不能太大。<strong>只装载一次</strong>，所以如要读到更新后的数据，通过类装载的方式得到资源文件的位置，再通过传统方式读取资源文件的数据（用<code>getResource</code>得到path，再用<code>FileInputStream</code>）</p>
+<p><code>keytool -genkey alias tomcat -keyalg RSA</code>得到<code>.keystore</code>文件</p>
+<ul>
+<li>Tomcat管理平台<br>主页-&gt;Tomcat Manager</li>
+</ul>
+<p>相关权限和用户配置在<code>conf/tomcat-users.xml</code></p>
+<h2 id="相关小知识"><a href="#相关小知识" class="headerlink" title="相关小知识"></a>相关小知识</h2><p>1.域名和主机名的区别</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:right">域名</th>
+<th style="text-align:center">sina.com</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right">主机名</td>
+<td style="text-align:center">www.sina.com</td>
+</tr>
+</tbody>
+</table>
+<p>2.url中主机名的作用：</p>
+<ul>
+<li>用于访问DNS服务器获取IP</li>
+<li>用于告诉代理服务器要访问哪个主机名</li>
+</ul>
 <h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><blockquote>
-<p><a href="http://blog.csdn.net/evankaka/article/details/46673051" target="_blank" rel="external">servlet和Jsp生命周期解读</a></p>
+<p><a href="http://www.cnblogs.com/rocomp/p/4802396.html" target="_blank" rel="external">Tomcat安装、配置、优化及负载均衡详解
+</a></p>
 </blockquote>
 <hr>
 
@@ -493,7 +504,7 @@
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/2017/04/15/javaweb/javaweb入门笔记(1)-Tomcat/" id="post_nav-newer" class="prev-content">
+        <a href="/2016/08/15/javaweb/javaweb入门笔记(2)-http入门/" id="post_nav-newer" class="prev-content">
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
                 <i class="material-icons">arrow_back</i>
             </button>
@@ -507,7 +518,7 @@
 
     <!-- Next Nav -->
     
-        <a href="/2017/04/15/javaweb/javaweb入门笔记(5)-cookie和session/" id="post_nav-older" class="next-content">
+        <a href="/2016/08/15/javaweb/javaweb入门笔记(5)-cookie和session/" id="post_nav-older" class="next-content">
             旧篇
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
@@ -545,7 +556,7 @@
 
     <!-- Sidebar Avatar -->
     <div class="sidebar-image">
-        <img src="/img/avatar.png" alt="Ac缺BFun's avatar">
+        <img src="/img/avatar.png" alt="跑的比谁都快's avatar">
     </div>
 
     <!-- Sidebar Email -->
@@ -599,7 +610,7 @@
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="sidebar_archives-link" href="/archives/2017/04/">四月 2017<span class="sidebar_archives-count">17</span></a>
+                <a class="sidebar_archives-link" href="/archives/2017/04/">四月 2017<span class="sidebar_archives-count">13</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/09/">九月 2016<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/08/">八月 2016<span class="sidebar_archives-count">5</span></a>
             </ul>
         </li>
         
@@ -617,7 +628,7 @@
             </a>
             <ul class="dropdown-menu">
                 <li>
-                <a class="sidebar_archives-link" href="/categories/JDK源码分析/">JDK源码分析<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/JavaWeb/">JavaWeb<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/categories/Java基础核心/">Java基础核心<span class="sidebar_archives-count">9</span></a>
+                <a class="sidebar_archives-link" href="/categories/JDK源码分析/">JDK源码分析<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/JavaWeb/">JavaWeb<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/categories/Java基础核心/">Java基础核心<span class="sidebar_archives-count">10</span></a></li><li><a class="sidebar_archives-link" href="/categories/SwordForOffer/">SwordForOffer<span class="sidebar_archives-count">1</span></a>
             </ul>
         </li>
         

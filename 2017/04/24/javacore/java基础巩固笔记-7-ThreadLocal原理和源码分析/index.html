@@ -10,7 +10,7 @@
     
     <title>
         
-            java基础巩固笔记(3)-类加载器 | 
+            java基础巩固笔记-7-ThreadLocal原理和源码分析 | 
         
         年轻人要多学习,否则就显得Navie
     </title>
@@ -58,7 +58,7 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="https://SiTao.coding.me/hexo-blog-siztao">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="java基础巩固笔记(3)-类加载器 | 年轻人要多学习,否则就显得Navie">
+    <meta property="og:title" content="java基础巩固笔记-7-ThreadLocal原理和源码分析 | 年轻人要多学习,否则就显得Navie">
     <meta property="og:description" content="每天进步一小步">
     <meta property="og:article:tag" content="Java"> 
 
@@ -242,7 +242,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#java基础巩固笔记-3-类加载器"><span class="post-toc-number">1.</span> <span class="post-toc-text">java基础巩固笔记(3)-类加载器</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#类加载器"><span class="post-toc-number">2.</span> <span class="post-toc-text">类加载器</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#默认类加载器"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">默认类加载器</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#类加载器的委托机制"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">类加载器的委托机制</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#自定义类加载器的编写原理"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">自定义类加载器的编写原理</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#参考资料"><span class="post-toc-number">2.4.</span> <span class="post-toc-text">参考资料</span></a></li></ol></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#java基础巩固笔记-7-ThreadLocal原理和源码"><span class="post-toc-number">1.</span> <span class="post-toc-text">java基础巩固笔记(7)-ThreadLocal原理和源码</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#ThreadLocal原理和源码分析"><span class="post-toc-number">2.</span> <span class="post-toc-text">ThreadLocal原理和源码分析</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Global-amp-amp-Local"><span class="post-toc-number">3.</span> <span class="post-toc-text">Global && Local</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#用法简介"><span class="post-toc-number">4.</span> <span class="post-toc-text">用法简介</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#创建-支持泛型"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">创建,支持泛型</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#set方法"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">set方法</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#get方法"><span class="post-toc-number">4.3.</span> <span class="post-toc-text">get方法</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#完整示例"><span class="post-toc-number">4.4.</span> <span class="post-toc-text">完整示例</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#ThreadLocal初始值"><span class="post-toc-number">5.</span> <span class="post-toc-text">ThreadLocal初始值</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#ThreadLocal实现原理"><span class="post-toc-number">5.1.</span> <span class="post-toc-text">ThreadLocal实现原理</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#set方法源码"><span class="post-toc-number">5.2.</span> <span class="post-toc-text">set方法源码</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#对象存放在哪里"><span class="post-toc-number">6.</span> <span class="post-toc-text">对象存放在哪里</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#是否只能被一个线程访问"><span class="post-toc-number">7.</span> <span class="post-toc-text">是否只能被一个线程访问</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#使用场景"><span class="post-toc-number">7.1.</span> <span class="post-toc-text">使用场景</span></a></li></ol></li></ol>
 
         <!--
         <li class="mdl-menu__item">
@@ -279,7 +279,7 @@
         
     
             <p class="article-headline-p">
-                java基础巩固笔记(3)-类加载器
+                java基础巩固笔记-7-ThreadLocal原理和源码分析
             </p>
         </div>
 
@@ -298,7 +298,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>跑的比谁都快</strong>
-        <span>4月 15, 2017</span>
+        <span>4月 24, 2017</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -338,7 +338,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=java基础巩固笔记(3)-类加载器&url=https://SiTao.coding.me/hexo-blog-siztao//2017/04/15/javacore/java基础巩固笔记-3-类加载器/index.html&pic=&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=java基础巩固笔记-7-ThreadLocal原理和源码分析&url=https://SiTao.coding.me/hexo-blog-siztao//2017/04/24/javacore/java基础巩固笔记-7-ThreadLocal原理和源码分析/index.html&pic=&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 分享到微博
             </li>
@@ -347,7 +347,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=java基础巩固笔记(3)-类加载器&url=https://SiTao.coding.me/hexo-blog-siztao//2017/04/15/javacore/java基础巩固笔记-3-类加载器/index.html&via=跑的比谁都快" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=java基础巩固笔记-7-ThreadLocal原理和源码分析&url=https://SiTao.coding.me/hexo-blog-siztao//2017/04/24/javacore/java基础巩固笔记-7-ThreadLocal原理和源码分析/index.html&via=跑的比谁都快" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Twitter
             </li>
@@ -356,7 +356,7 @@
 
     <!-- Share Facebook -->
     
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=https://SiTao.coding.me/hexo-blog-siztao//2017/04/15/javacore/java基础巩固笔记-3-类加载器/index.html" target="_blank">
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=https://SiTao.coding.me/hexo-blog-siztao//2017/04/24/javacore/java基础巩固笔记-7-ThreadLocal原理和源码分析/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Facebook
             </li>
@@ -365,7 +365,7 @@
 
     <!-- Share Google+ -->
     
-        <a class="post_share-link" href="https://plus.google.com/share?url=https://SiTao.coding.me/hexo-blog-siztao//2017/04/15/javacore/java基础巩固笔记-3-类加载器/index.html" target="_blank">
+        <a class="post_share-link" href="https://plus.google.com/share?url=https://SiTao.coding.me/hexo-blog-siztao//2017/04/24/javacore/java基础巩固笔记-7-ThreadLocal原理和源码分析/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Google+
             </li>
@@ -389,71 +389,46 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <h1 id="java基础巩固笔记-3-类加载器"><a href="#java基础巩固笔记-3-类加载器" class="headerlink" title="java基础巩固笔记(3)-类加载器"></a>java基础巩固笔记(3)-类加载器</h1><hr>
+        <h1 id="java基础巩固笔记-7-ThreadLocal原理和源码"><a href="#java基础巩固笔记-7-ThreadLocal原理和源码" class="headerlink" title="java基础巩固笔记(7)-ThreadLocal原理和源码"></a>java基础巩固笔记(7)-ThreadLocal原理和源码</h1><hr>
 <p><strong>Contents</strong></p>
 <ul>
-<li><a href="#java基础巩固笔记3-类加载器">java基础巩固笔记(3)-类加载器</a></li>
-<li><a href="#类加载器">类加载器</a><ul>
-<li><a href="#默认类加载器">默认类加载器</a></li>
-<li><a href="#类加载器的委托机制">类加载器的委托机制</a></li>
-<li><a href="#自定义类加载器的编写原理">自定义类加载器的编写原理</a></li>
-<li><a href="#参考资料">参考资料</a></li>
+<li><a href="#ThreadLocal原理和源码分析">java基础巩固笔记(7)-ThreadLocal原理和源码分析</a></li>
+<li><a href="#ThreadLocal原理和源码分析">ThreadLocal原理和源码分析</a><ul>
+<li><a href="#ThreadLocal是什么">ThreadLocal是什么</a></li>
+<li><a href="#数组的反射">数组的反射</a></li>
+<li><a href="#配置文件加载">配置文件加载</a></li>
+<li><a href="#内省instropector--javabean">内省(Instropector) &amp; JavaBean</a></li>
 </ul>
 </li>
 </ul>
-<hr>
-<h1 id="类加载器"><a href="#类加载器" class="headerlink" title="类加载器"></a>类加载器</h1><p>java类加载器就是在运行时在JVM中动态地加载所需的类，java类加载器基于三个机制：委托，可见，单一。</p>
-<p>把classpath下的那些.class文件加载进内存，处理后成为字节码，这些工作是类加载器做的。</p>
-<ul>
-<li><strong>委托机制</strong>指的是将加载类的请求传递给父加载器，如果父加载器找不到或者不能加载这个类，那么再加载他。</li>
-<li><strong>可见性机制</strong>指的是父加载器加载的类都能被子加载器看见，但是子加载器加载的类父加载器是看不见的。</li>
-<li><strong>单一性机制</strong>指的是一个类只能被同一种加载器加载一次。</li>
+<h1 id="ThreadLocal原理和源码分析"><a href="#ThreadLocal原理和源码分析" class="headerlink" title="ThreadLocal原理和源码分析"></a>ThreadLocal原理和源码分析</h1><p>  ThreadLocal是一个关于创建线程局部变量的类。通常情况下,我们创建的变量是可以被任何一个线程访问<br>  并修改的。而使用ThreadLocal创建的变量只能被当前线程访问,其他线程则无法访问和修改。</p>
+<h1 id="Global-amp-amp-Local"><a href="#Global-amp-amp-Local" class="headerlink" title="Global &amp;&amp; Local"></a>Global &amp;&amp; Local</h1><ul>
+<li>Global意思是当前线程中,任意一个点都能访问到ThreadLocal的值</li>
+<li>Local意思是该线程的ThreadLocal只能被该线程访问,一般情况下其他线程访问不到</li>
 </ul>
-<h2 id="默认类加载器"><a href="#默认类加载器" class="headerlink" title="默认类加载器"></a>默认类加载器</h2><p>系统默认三个类加载器:</p>
-<ul>
-<li><code>BootStrap</code></li>
-<li><code>ExtClassLoader</code></li>
-<li><code>AppClassLoader</code></li>
+<h1 id="用法简介"><a href="#用法简介" class="headerlink" title="用法简介"></a>用法简介</h1><h2 id="创建-支持泛型"><a href="#创建-支持泛型" class="headerlink" title="创建,支持泛型"></a>创建,支持泛型</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ThreadLocal&lt;String&gt; mStringThreadLocal = new ThreadLocal&lt;&gt;();</div></pre></td></tr></table></figure>
+<h2 id="set方法"><a href="#set方法" class="headerlink" title="set方法"></a>set方法</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mStringThreadLocal.set(&quot;baidu.com&quot;);</div></pre></td></tr></table></figure>
+<h2 id="get方法"><a href="#get方法" class="headerlink" title="get方法"></a>get方法</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mStringThreadLocal.get();</div></pre></td></tr></table></figure>
+<h2 id="完整示例"><a href="#完整示例" class="headerlink" title="完整示例"></a>完整示例</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">private void testThreadLocal()&#123;</div><div class="line">  Thread t = new Thread()&#123;</div><div class="line">    ThreadLocal &lt;String&gt; mStringThreadLocal = new ThreadLocal&lt;&gt;();</div><div class="line">    @Override</div><div class="line">    public void run()&#123;</div><div class="line">      super.run();</div><div class="line">      mStringThreadLocal.set(&quot;baidu.com&quot;);</div><div class="line">      mStringThreadLocal.get();</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">  t.start();</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h1 id="ThreadLocal初始值"><a href="#ThreadLocal初始值" class="headerlink" title="ThreadLocal初始值"></a>ThreadLocal初始值</h1><p>  为ThreadLocal设置默认的初始值,需要重写initialValue方法。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">ThreadLocal&lt;String&gt; mThreadLocal = new ThreadLocal&lt;String&gt;()&#123;</div><div class="line">  @Override</div><div class="line">  protected String initialValue()&#123;</div><div class="line">    return Thread.currentThread().getName();</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h2 id="ThreadLocal实现原理"><a href="#ThreadLocal实现原理" class="headerlink" title="ThreadLocal实现原理"></a>ThreadLocal实现原理</h2><p>实际上ThreadLocal的值是放入了当前线程的一个ThreadLocalMap 实例中,所以只能在本线程中访问,其他线程无法访问</p>
+<h2 id="set方法源码"><a href="#set方法源码" class="headerlink" title="set方法源码"></a>set方法源码</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">public void set(T value)&#123;</div><div class="line">  Thread t = Thread.currentThread();</div><div class="line">  ThreadLocalMap map = getMap(t);</div><div class="line">  if(map !=null)&#123;</div><div class="line">    map.set(this,value);</div><div class="line">  &#125;else&#123;</div><div class="line">    createMap(t,value);</div><div class="line">  &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>下面是一个利用Thread对象作为句柄获取ThreadLocalMap对象的代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">ThreadLocalMap getMap(Thread t)&#123;</div><div class="line">  return t.ThreadLocals;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>上面的代实际上获取的是Thread对象的ThreadLocals 变量<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">class Thread implements Runnable&#123;</div><div class="line">  ThreadLocal.ThreadLocalMap ThreadLocals = null;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>如果一开始设置,即ThreadLocalMap对象未创建,则新建ThreadLocalMap对象,并初始化值。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">void createMap(Thread t,T firstValue)&#123;</div><div class="line">  t.threadLocals = new ThreadLocalMap(this,firstValue);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h1 id="对象存放在哪里"><a href="#对象存放在哪里" class="headerlink" title="对象存放在哪里"></a>对象存放在哪里</h1><p>在Java中,栈内存归属于单个线程,每个线程都会有一个栈内存,其存储的变量只能在其所属线程中可见,<br>即栈内存可以理解成线程的私有内存,而堆内存的对象所有线程可见,堆内存中的对象可以被所有线程访问。</p>
+<p>那么ThreadLocal的实例以及其值存在栈上么?</p>
+<p>不是,因为实际上ThreadLocal也是被其创建的类持有,而ThreadLocal的值其实也是被线程持有。<br>它们都位于堆上,只是通过一些技巧将可见性修改成了线程可见。</p>
+<h1 id="是否只能被一个线程访问"><a href="#是否只能被一个线程访问" class="headerlink" title="是否只能被一个线程访问"></a>是否只能被一个线程访问</h1><p>如何实现ThreadLocal的值被其他线程访问呢?<br>通过使用InheritableThreadLocal可以实现多个线程访问ThreadLocal的值。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">private void testInheritableThreadLocal()&#123;</div><div class="line">  final ThreadLocal threadLocal = new InheritableThreadLocal();</div><div class="line">  threadLocal.set(&quot;baidu.com&quot;);</div><div class="line">  Thread t = new Thread()&#123;</div><div class="line">    @Override</div><div class="line">    public void run()&#123;</div><div class="line">      super.run();</div><div class="line">      Log.i(&quot;testInheritableThreadLocal&quot;+threadLocal.get());</div><div class="line">    &#125;</div><div class="line">  &#125;;</div><div class="line">  t.start();</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>输出<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">I/MainActivity( 5046): testInheritableThreadLocal=baidu.com</div></pre></td></tr></table></figure></p>
+<p>使用InheritableThreadLocal 可以将某个线程的ThreadLocal值在其子线程创建时传递过去,因为线程创建过程中,有相关处理逻辑<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">private void init(ThreadGroup g,Runnable target,String name,long stackSize,AccessControlContext acc)&#123;</div><div class="line">    if(parent.InheritableThreadLocals != null)&#123;</div><div class="line">      this.InheritableThreadLocals =</div><div class="line">        ThreadLocal.createInheritedMap(parent.InheritableThreadLocals);</div><div class="line">    &#125;</div><div class="line">    this.stackSize = stackSize;</div><div class="line">    tid = nextThreadID();</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h2 id="使用场景"><a href="#使用场景" class="headerlink" title="使用场景"></a>使用场景</h2><ul>
+<li>实现单个线程单例即单个线程上下文信息存储,比如交易ID</li>
+<li>实现线程安全,非线程安全的对象使用ThreadLocal之后变得线程安全,因为每个线程都会有一个对应实例</li>
+<li>承载一些线程相关的数据,避免在方法中来回传递参数</li>
 </ul>
-<p><em>类加载器也是java类，而BootStrap不是。</em><br>验证代码：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ClassLoaderTest</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">        System.out.println(System.class.getClassLoader());</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>输出：<code>null</code></p>
-<p>如果使用<code>System.out.println(System.class.getClassLoader().toString);</code>，则报空指针异常:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">Exception in thread &quot;main&quot; java.lang.NullPointerException</div><div class="line">	at com.iot.classloader.ClassLoaderTest.main(ClassLoaderTest.java:10)</div><div class="line">	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)</div><div class="line">	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)</div><div class="line">	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)</div><div class="line">	at java.lang.reflect.Method.invoke(Method.java:483)</div><div class="line">	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:144)</div></pre></td></tr></table></figure>
-<p>可见，System类是由BootStrap类加载器加载。</p>
-<h2 id="类加载器的委托机制"><a href="#类加载器的委托机制" class="headerlink" title="类加载器的委托机制"></a>类加载器的委托机制</h2><p>类加载器的树状图</p>
-<p><img src="http://7xph6d.com1.z0.glb.clouddn.com/javaSE_%E7%B1%BB%E5%8A%A0%E8%BD%BD%E5%99%A8%E7%BB%93%E6%9E%84%E5%9B%BE.png" alt="类加载器"></p>
-<p>一般加载类的顺序：</p>
-<ul>
-<li>首先当前线程的类加载器去加载线程中的第一个类</li>
-<li>如果类A应用了类B，java虚拟机将使用加载类A的类加载器来加载类B</li>
-<li>还可以直接调用ClassLoader.loadClass()方法来制定某个类加载器去加载某个类</li>
-</ul>
-<hr>
-<h2 id="自定义类加载器的编写原理"><a href="#自定义类加载器的编写原理" class="headerlink" title="自定义类加载器的编写原理"></a>自定义类加载器的编写原理</h2><p>API:</p>
-<blockquote>
-<p><a href="https://docs.oracle.com/javase/8/docs/api/index.html?java/lang/ClassLoader.html" target="_blank" rel="external">Class ClassLoader</a></p>
-</blockquote>
-<p>模板方法设计模式</p>
-<p>父类:</p>
-<ul>
-<li><code>loadClass</code>(类加载的流程，模板)</li>
-<li><code>findClass</code>供子类覆盖的、被<code>loadClass</code>方法调用的类加载逻辑</li>
-<li><code>defineClass</code>得到class文件转换成字节码</li>
-</ul>
-<p>子类:覆盖<code>findClass</code>方法</p>
-<p>例子：</p>
-<p><code>loadClass</code>方法的源码</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">protected</span> Class&lt;?&gt; loadClass(String name, <span class="keyword">boolean</span> resolve)</div><div class="line">    <span class="keyword">throws</span> ClassNotFoundException</div><div class="line">&#123;</div><div class="line">    <span class="keyword">synchronized</span> (getClassLoadingLock(name)) &#123;</div><div class="line">        <span class="comment">// First, check if the class has already been loaded</span></div><div class="line">        Class&lt;?&gt; c = findLoadedClass(name);</div><div class="line">        <span class="keyword">if</span> (c == <span class="keyword">null</span>) &#123;</div><div class="line">            <span class="keyword">long</span> t0 = System.nanoTime();</div><div class="line">            <span class="keyword">try</span> &#123;</div><div class="line">                <span class="keyword">if</span> (parent != <span class="keyword">null</span>) &#123;</div><div class="line">                    c = parent.loadClass(name, <span class="keyword">false</span>);</div><div class="line">                &#125; <span class="keyword">else</span> &#123;</div><div class="line">                    c = findBootstrapClassOrNull(name);</div><div class="line">                &#125;</div><div class="line">            &#125; <span class="keyword">catch</span> (ClassNotFoundException e) &#123;</div><div class="line">                <span class="comment">// ClassNotFoundException thrown if class not found</span></div><div class="line">                <span class="comment">// from the non-null parent class loader</span></div><div class="line">            &#125;</div><div class="line"></div><div class="line">            <span class="keyword">if</span> (c == <span class="keyword">null</span>) &#123;</div><div class="line">                <span class="comment">// If still not found, then invoke findClass in order</span></div><div class="line">                <span class="comment">// to find the class.</span></div><div class="line">                <span class="keyword">long</span> t1 = System.nanoTime();</div><div class="line">                c = findClass(name);</div><div class="line"></div><div class="line">                <span class="comment">// this is the defining class loader; record the stats</span></div><div class="line">                sun.misc.PerfCounter.getParentDelegationTime().addTime(t1 - t0);</div><div class="line">                sun.misc.PerfCounter.getFindClassTime().addElapsedTimeFrom(t1);</div><div class="line">                sun.misc.PerfCounter.getFindClasses().increment();</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">if</span> (resolve) &#123;</div><div class="line">            resolveClass(c);</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> c;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>API文档中的例子:</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">NetworkClassLoader</span> <span class="keyword">extends</span> <span class="title">ClassLoader</span> </span>&#123;</div><div class="line">     String host;</div><div class="line">     <span class="keyword">int</span> port;</div><div class="line"></div><div class="line">     <span class="function"><span class="keyword">public</span> Class <span class="title">findClass</span><span class="params">(String name)</span> </span>&#123;</div><div class="line">         <span class="keyword">byte</span>[] b = loadClassData(name);</div><div class="line">         <span class="keyword">return</span> defineClass(name, b, <span class="number">0</span>, b.length);</div><div class="line">     &#125;</div><div class="line"></div><div class="line">     <span class="keyword">private</span> <span class="keyword">byte</span>[] loadClassData(String name) &#123;</div><div class="line">         <span class="comment">// load the class data from the connection</span></div><div class="line">          . . .</div><div class="line">     &#125;</div><div class="line"> &#125;</div></pre></td></tr></table></figure>
-<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><blockquote>
-<ul>
-<li><a href="http://ju.outofmemory.cn/entry/142486" target="_blank" rel="external">java类加载机制工作原理</a></li>
-<li><a href="http://blog.csdn.net/gjanyanlig/article/details/6818655" target="_blank" rel="external">Java类加载器总结 - 寂静大海 - 博客频道 - CSDN.NET</a></li>
-</ul>
-</blockquote>
-<hr>
 
     
 
@@ -480,7 +455,7 @@
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/2017/04/15/javacore/java基础巩固笔记-2-泛型/" id="post_nav-newer" class="prev-content">
+        <a href="/2017/04/15/javacore/java基础巩固笔记-6-注解/" id="post_nav-newer" class="prev-content">
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
                 <i class="material-icons">arrow_back</i>
             </button>
@@ -494,7 +469,7 @@
 
     <!-- Next Nav -->
     
-        <a href="/2017/04/15/javacore/java基础巩固笔记-4-代理/" id="post_nav-older" class="next-content">
+        <a href="/2017/04/24/数据结构与算法/SwordForOffer/剑指Offer-01/" id="post_nav-older" class="next-content">
             旧篇
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">

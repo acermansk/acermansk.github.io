@@ -10,7 +10,7 @@
     
     <title>
         
-            javaweb入门笔记(5)-cookie和session | 
+            剑指Offer-01 | 
         
         年轻人要多学习,否则就显得Navie
     </title>
@@ -30,9 +30,9 @@
     <meta http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#0097A7">
-    <meta name="author" content="Ac缺BFun">
-    <meta name="description" content="水平太低">
-    <meta name="keywords" content="null,JavaWeb">
+    <meta name="author" content="跑的比谁都快">
+    <meta name="description" content="每天进步一小步">
+    <meta name="keywords" content="null,DataStruct SwordForOffer">
 
     <!-- Favicons -->
     <link rel="icon shortcut" type="image/ico" href="/img/favicon.png">
@@ -58,9 +58,9 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="https://SiTao.coding.me/hexo-blog-siztao">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="javaweb入门笔记(5)-cookie和session | 年轻人要多学习,否则就显得Navie">
-    <meta property="og:description" content="水平太低">
-    <meta property="og:article:tag" content="JavaWeb"> 
+    <meta property="og:title" content="剑指Offer-01 | 年轻人要多学习,否则就显得Navie">
+    <meta property="og:description" content="每天进步一小步">
+    <meta property="og:article:tag" content="DataStruct SwordForOffer"> 
 
     <!--[if lte IE 9]>
         <link rel="stylesheet" href="/css/ie-blocker.css">
@@ -242,7 +242,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#cookie"><span class="post-toc-number">1.</span> <span class="post-toc-text">cookie</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#session"><span class="post-toc-number">2.</span> <span class="post-toc-text">session</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#实现原理"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">实现原理</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#应用案例"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">应用案例</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#三个域对象"><span class="post-toc-number">3.</span> <span class="post-toc-text">三个域对象</span></a></li></ol>
+        
 
         <!--
         <li class="mdl-menu__item">
@@ -279,7 +279,7 @@
         
     
             <p class="article-headline-p">
-                javaweb入门笔记(5)-cookie和session
+                剑指Offer-01
             </p>
         </div>
 
@@ -297,8 +297,8 @@
     </div>
     <!-- Author Name & Date -->
     <div>
-        <strong>Ac缺BFun</strong>
-        <span>4月 15, 2017</span>
+        <strong>跑的比谁都快</strong>
+        <span>4月 24, 2017</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -322,7 +322,7 @@
     </button>
     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
         <li class="mdl-menu__item">
-        <a class="post_tag-link" href="/tags/JavaWeb/">JavaWeb</a>
+        <a class="post_tag-link" href="/tags/DataStruct-SwordForOffer/">DataStruct SwordForOffer</a>
     </ul>
     
 
@@ -338,7 +338,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=javaweb入门笔记(5)-cookie和session&url=https://SiTao.coding.me/hexo-blog-siztao//2017/04/15/javaweb/javaweb入门笔记(5)-cookie和session/index.html&pic=&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=剑指Offer-01&url=https://SiTao.coding.me/hexo-blog-siztao//2017/04/24/数据结构与算法/SwordForOffer/剑指Offer-01/index.html&pic=&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 分享到微博
             </li>
@@ -347,7 +347,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=javaweb入门笔记(5)-cookie和session&url=https://SiTao.coding.me/hexo-blog-siztao//2017/04/15/javaweb/javaweb入门笔记(5)-cookie和session/index.html&via=Ac缺BFun" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=剑指Offer-01&url=https://SiTao.coding.me/hexo-blog-siztao//2017/04/24/数据结构与算法/SwordForOffer/剑指Offer-01/index.html&via=跑的比谁都快" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Twitter
             </li>
@@ -356,7 +356,7 @@
 
     <!-- Share Facebook -->
     
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=https://SiTao.coding.me/hexo-blog-siztao//2017/04/15/javaweb/javaweb入门笔记(5)-cookie和session/index.html" target="_blank">
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=https://SiTao.coding.me/hexo-blog-siztao//2017/04/24/数据结构与算法/SwordForOffer/剑指Offer-01/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Facebook
             </li>
@@ -365,7 +365,7 @@
 
     <!-- Share Google+ -->
     
-        <a class="post_share-link" href="https://plus.google.com/share?url=https://SiTao.coding.me/hexo-blog-siztao//2017/04/15/javaweb/javaweb入门笔记(5)-cookie和session/index.html" target="_blank">
+        <a class="post_share-link" href="https://plus.google.com/share?url=https://SiTao.coding.me/hexo-blog-siztao//2017/04/24/数据结构与算法/SwordForOffer/剑指Offer-01/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Google+
             </li>
@@ -389,74 +389,110 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <p>标签： javaweb</p>
+        <p>单例模式总结</p>
 <hr>
-<p><strong>Contents</strong></p>
-<ul>
-<li><a href="#javaweb入门笔记5-cookie和session">javaweb入门笔记(5)-cookie和session</a><ul>
-<li><a href="#cookie">cookie</a></li>
-<li><a href="#session">session</a><ul>
-<li><a href="#实现原理">实现原理</a></li>
-<li><a href="#应用案例">应用案例</a></li>
-</ul>
-</li>
-<li><a href="#三个域对象">三个域对象</a></li>
-</ul>
-</li>
-</ul>
-<hr>
-<p>Cookie是客户端技术；Session是服务器端技术。</p>
-<p>API:</p>
-<blockquote>
-<ul>
-<li><a href="https://tomcat.apache.org/tomcat-8.0-doc/servletapi/index.html?javax/servlet/http/Cookie.html" target="_blank" rel="external">javax.servlet.http:Class Cookie</a></li>
-<li><a href="https://tomcat.apache.org/tomcat-8.0-doc/servletapi/index.html?javax/servlet/http/HttpSession.html" target="_blank" rel="external">javax.servlet.http:Interface HttpSession</a></li>
-</ul>
-</blockquote>
-<h2 id="cookie"><a href="#cookie" class="headerlink" title="cookie"></a>cookie</h2><p>一些细节：</p>
-<ul>
-<li>一个cookie只能标识一种信息，至少含有标识该信息的名称和值</li>
-<li>浏览器一般只允许存放300个cookie，每个站点最多存放20个，每个cookie大小限制为4KB</li>
-<li>默认是会话级别cookie(存储于浏览器内存)，浏览器进程关闭则删除。有效期通过<code>maxAge</code>设置，存于硬盘，0表示删除</li>
-<li>删除cookie时，path必须一致，否则不会删除</li>
-</ul>
-<h2 id="session"><a href="#session" class="headerlink" title="session"></a>session</h2><p>session对象由服务器创建,一个浏览器(会话)独占一个session对象</p>
-<p>session对象由服务器创建生命周期</p>
-<ul>
-<li>创建：调用<code>request</code>对象的<code>getSession</code>方法后才会创建session对象;<code>getSession(false)</code>只获取， 不创建</li>
-<li>销毁：默认30分钟没人使用则自动销毁。失效时间可在<code>web.xml</code>的<code>&lt;session-config&gt;</code>标签中使用<code>&lt;session-timeout&gt;</code>，单位分钟；也可调用<code>session</code>对象的<code>invalidate</code>方法销毁</li>
-</ul>
-<h3 id="实现原理"><a href="#实现原理" class="headerlink" title="实现原理"></a>实现原理</h3><p>session基于cookie实现，将<code>JSESSIONID</code>写回浏览器，这个cookie(<code>JSESSIONID</code>)默认没设置有效期,关浏览器即销毁。可以自行回写<code>JSESSIONID</code>覆盖原cookie值</p>
-<p>示例代码片段：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">doGet</span><span class="params">(HttpServletRequest req, HttpServletResponse resp)</span> <span class="keyword">throws</span> ServletException, IOException </span>&#123;</div><div class="line">    HttpSession session = req.getSession();</div><div class="line">    String sessionid = session.getId();</div><div class="line">    Cookie cookie = <span class="keyword">new</span> Cookie(<span class="string">"JSESSIONID"</span>,sessionid);</div><div class="line">    cookie.setPath(<span class="string">"/s1"</span>);</div><div class="line">    cookie.setMaxAge(<span class="number">30</span>*<span class="number">60</span>);</div><div class="line">    resp.addCookie(cookie);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="应用案例"><a href="#应用案例" class="headerlink" title="应用案例"></a>应用案例</h3><ul>
-<li>用户登录</li>
-<li>防止表单重复提交</li>
-<li>一次性验证码的校验</li>
-</ul>
-<p><strong>小Tips</strong></p>
-<ul>
-<li>一般大型网站不用session,使用cookie,减小服务器压力</li>
-<li>若浏览器禁用cookie,需使用url自带sessionid，相关方法:<code>encodeURL</code>和<code>encodeRedirectURL</code></li>
-<li>禁止表单重复提交：在javascript或者服务器实现。javascript防不死，用户可通过修改js、自建表单提交，刷新页面，后退等方法重复提交；服务器实现是给每个表单一个随机表单号</li>
-<li>生成表单号使用“令牌发生器”，为保证唯一性(减小重复概率)，使用单例。</li>
-<li>base64编码，三字节变四字节，每6位变8位(一字节)，高位补零，每字节最大值为63，故得名。</li>
-<li>md5，常用于保存密码(可能为防止破解会加随机数)，校验数据完整性</li>
-</ul>
-<p>防止表单重复提交之令牌例子：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> org.iot.data;</div><div class="line"></div><div class="line"><span class="keyword">import</span> sun.misc.BASE64Encoder;</div><div class="line"><span class="keyword">import</span> java.security.MessageDigest;</div><div class="line"><span class="keyword">import</span> java.security.NoSuchAlgorithmException;</div><div class="line"><span class="keyword">import</span> java.util.Random;</div><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line"> * Created by brian on 2016/1/27.</div><div class="line"> */</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TokenProcessor</span> </span>&#123;<span class="comment">//令牌</span></div><div class="line">    <span class="comment">/**</span></div><div class="line">     * 1.构造方法私有</div><div class="line">     * 2.自己创建一个</div><div class="line">     * 3.对外暴露一个方法，允许获取上面创建的对象</div><div class="line">     */</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">private</span> <span class="title">TokenProcessor</span><span class="params">()</span></span>&#123;&#125;</div><div class="line"></div><div class="line">    <span class="keyword">private</span>  <span class="keyword">static</span> <span class="keyword">final</span> TokenProcessor instance = <span class="keyword">new</span> TokenProcessor();</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> TokenProcessor <span class="title">getInstance</span><span class="params">()</span></span>&#123;</div><div class="line">        <span class="keyword">return</span> instance;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">genetateToken</span><span class="params">()</span></span>&#123;</div><div class="line">        String token = System.currentTimeMillis()+<span class="keyword">new</span> Random().nextInt()+<span class="string">""</span>;</div><div class="line"></div><div class="line">        <span class="keyword">try</span> &#123;</div><div class="line">            MessageDigest md =  MessageDigest.getInstance(<span class="string">"md5"</span>);</div><div class="line">            <span class="keyword">byte</span> [] md5 =  md.digest(token.getBytes());</div><div class="line">            <span class="comment">//base64编码</span></div><div class="line">            BASE64Encoder encoder = <span class="keyword">new</span> BASE64Encoder();</div><div class="line">            <span class="keyword">return</span> encoder.encode(md5);</div><div class="line">        &#125; <span class="keyword">catch</span> (NoSuchAlgorithmException e) &#123;</div><div class="line">            e.printStackTrace();</div><div class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> RuntimeException(e);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h2 id="三个域对象"><a href="#三个域对象" class="headerlink" title="三个域对象"></a>三个域对象</h2><ul>
-<li>Session</li>
-<li>Request</li>
-<li>ServletContext</li>
-</ul>
-<p>容器选用经验：</p>
-<ul>
-<li>数据显示完了就没用了，则选用Request</li>
-<li>数据除了显示外，稍后还会用，则选用Session</li>
-<li>数据除了显示外，不仅稍后会用，还会给别人用，则选用<code>ServletContext</code></li>
-</ul>
-<hr>
+<p>1.什么是单例模式</p>
+<p>在现实生活中存在着有这样的特点的一些类：</p>
+<pre><code>A．这些类只能有一个实例；
+
+B．这些能够自动实例化；
+
+C．这个类对整个系统可见，即必须向整个系统提供这个实例。
+</code></pre><p>不妨举一个具体的单例模式的例子：比如教室里面的教师和学生都是需要在黑板上写字的，但是一般的情况下，教室里面应该只有一个黑板吧，它是教师和学生公用滴。这时就要想办法保证取得的黑板是一个共享的唯一的对象。而单例模式就是解决这类问题的一个已经成型的模式。</p>
+<p>2.如何实现单例模式</p>
+<p>单例模式的实现通常有两种方式：“饿汉式”和“懒汉式”。</p>
+<p>2.1饿汉式：java实现代码如下：</p>
+<p>Public class Singleton</p>
+<p>{</p>
+<pre><code>Private static final Singleton singleton = new Singleton();
+
+Private Singleton()
+
+{
+
+}
+
+Public static Singleton getInstance()
+
+{
+
+       Return singleton;
+
+}
+</code></pre><p>}</p>
+<p>小结：采用懒汉式方法实现单例模式的方法是在类的内部实例化一个静态变量singleton，这是比较好理解的，既然一个类要满足上面的A,B,C三个特点，那么很自然的能想到声明为一个类的静态变量啦。还有一点要注意的哦，那就是该类的构造方法是私有的。这样类就不提供默认的构造函数了，所以也就不可以实例化了。呵呵，看看懒汉式吧，对比一下。</p>
+<p>2.2懒汉式：java实现代码如下：</p>
+<p>Public class Singleton</p>
+<p>{</p>
+<pre><code>Private static final Singleton singleton;//未初始化
+
+Private Singleton()
+
+{
+
+}
+
+Public static Singleton getInstance()
+
+{
+
+       If(singleton == null)
+
+       {
+
+              Singleton = new Singleton();
+
+       }
+
+}
+</code></pre><p>}</p>
+<p>小结：发现这两种方式的区别了吗？懒汉式也是通过一个类的静态变量实现的。但是并没有直接初始化。而是在函数getInstance()中实例化的，也就是每次想用这个实例的时候初始化的，如果已经初始化了，那么就不用初始化了，这样也很好啊，对的，其实懒汉式是比较常用的实现方式。</p>
+<p>3.多线程下的单例模式</p>
+<pre><code>知道了什么是单例模式，也知道了单例模式怎么实现，是不是神功已经练成了呢？哈哈哈，真正地武林高手，不仅仅是自己的功夫深，还要知道自己的功夫有什么漏洞，让我们看看上面的实现方式的bug吧。（看标题就明白了吧！！）
+
+对，那就是在多线程的情况下，会有问题。对于懒汉式实现的方式，如果现在存在着线程A和B，代码执行情况是这个样子的，线程A执行到了If(singleton == null)，线程B执行到了Singleton = new Singleton();线程B虽然实例化了一个Singleton，但是对于线程A来说判断singleton还是木有初始化的，所以线程A还会对singleton进行初始化。看看，出现问题了吧，年轻人不要惧怕问题，看看怎么解决吧。这就要用到Synchronized（同步）了，java编程语言中提供了两种同步方式：“同步方法”和“同步声明”。
+</code></pre><p>于是乎，只要把Public static Singleton getInstance()加上一个Synchronized就ok了，</p>
+<p>Public static Synchronized Singleton getInstance()。这样的话，当线程B访问这个函数的时候，其他的任何要访问该函数的代码不能执行，直到线程B执行完该函数（这是利用锁实现的）。看看很容易解决的，所以嘛，记住哦，出现问题不要怕啊。</p>
+<pre><code>这样写东西是真的有点烦人，但是我不得不说这样还是不太好的，因为多个线程访问同一个函数的时候，那么只能有一个线程能够访问这个函数，这显然效率有点低吧，其实可以用另外一种不同方式。看看代码：
+</code></pre><p>Public static Singleton getInstance()</p>
+<p>{</p>
+<pre><code>If(singleton == null)
+
+{
+
+       Synchronized(singleton.class)
+
+       {
+
+                     Singleton = new Singleton();
+
+       }
+
+}
+</code></pre><p>}</p>
+<p>这种方式将在方法上的声明转移到了内部的代码块中，只有当singleton=null时，才需要锁机制，但是如果线程A和B同时执行到了Synchronized(singleton.class)，虽然也是只有一个线程能够执行，假如线程B先执行，线程B获得锁，线程B执行完之后，线程A获得锁，但是此时没有检查singleton是否为空就直接执行了，所以还会出现两个singleton实例的情况。于是双重检查模式（DCL）就出现了。代码如下：</p>
+<p>Public static Singleton getInstance()</p>
+<p>{</p>
+<pre><code>If(singleton == null)
+
+{
+
+       Synchronized(singleton.class)
+
+       {
+
+              If(singleton == null)
+
+              {
+
+                     Singleton = new Singleton();
+
+              }
+
+       }
+
+}
+</code></pre><p>}</p>
 
     
 
@@ -483,7 +519,7 @@
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/2017/04/15/javaweb/javaweb入门笔记(3)-Servlet/" id="post_nav-newer" class="prev-content">
+        <a href="/2017/04/24/javacore/java基础巩固笔记-7-ThreadLocal原理和源码分析/" id="post_nav-newer" class="prev-content">
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
                 <i class="material-icons">arrow_back</i>
             </button>
@@ -496,14 +532,6 @@
     <div class="section-spacer"></div>
 
     <!-- Next Nav -->
-    
-        <a href="/2017/04/15/javaweb/javaweb入门笔记(2)-http入门/" id="post_nav-older" class="next-content">
-            旧篇
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_forward</i>
-            </button>
-        </a>
     
 </nav>
 
@@ -535,7 +563,7 @@
 
     <!-- Sidebar Avatar -->
     <div class="sidebar-image">
-        <img src="/img/avatar.png" alt="Ac缺BFun's avatar">
+        <img src="/img/avatar.png" alt="跑的比谁都快's avatar">
     </div>
 
     <!-- Sidebar Email -->
@@ -589,7 +617,7 @@
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="sidebar_archives-link" href="/archives/2017/04/">四月 2017<span class="sidebar_archives-count">17</span></a>
+                <a class="sidebar_archives-link" href="/archives/2017/04/">四月 2017<span class="sidebar_archives-count">13</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/09/">九月 2016<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/08/">八月 2016<span class="sidebar_archives-count">5</span></a>
             </ul>
         </li>
         
@@ -607,7 +635,7 @@
             </a>
             <ul class="dropdown-menu">
                 <li>
-                <a class="sidebar_archives-link" href="/categories/JDK源码分析/">JDK源码分析<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/JavaWeb/">JavaWeb<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/categories/Java基础核心/">Java基础核心<span class="sidebar_archives-count">9</span></a>
+                <a class="sidebar_archives-link" href="/categories/JDK源码分析/">JDK源码分析<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/JavaWeb/">JavaWeb<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/categories/Java基础核心/">Java基础核心<span class="sidebar_archives-count">10</span></a></li><li><a class="sidebar_archives-link" href="/categories/SwordForOffer/">SwordForOffer<span class="sidebar_archives-count">1</span></a>
             </ul>
         </li>
         

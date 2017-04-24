@@ -10,7 +10,7 @@
     
     <title>
         
-            javaweb入门笔记(4)-request和response | 
+            javaweb入门笔记(5)-cookie和session | 
         
         年轻人要多学习,否则就显得Navie
     </title>
@@ -30,8 +30,8 @@
     <meta http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#0097A7">
-    <meta name="author" content="Ac缺BFun">
-    <meta name="description" content="水平太低">
+    <meta name="author" content="跑的比谁都快">
+    <meta name="description" content="每天进步一小步">
     <meta name="keywords" content="null,JavaWeb">
 
     <!-- Favicons -->
@@ -58,8 +58,8 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="https://SiTao.coding.me/hexo-blog-siztao">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="javaweb入门笔记(4)-request和response | 年轻人要多学习,否则就显得Navie">
-    <meta property="og:description" content="水平太低">
+    <meta property="og:title" content="javaweb入门笔记(5)-cookie和session | 年轻人要多学习,否则就显得Navie">
+    <meta property="og:description" content="每天进步一小步">
     <meta property="og:article:tag" content="JavaWeb"> 
 
     <!--[if lte IE 9]>
@@ -242,7 +242,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#response"><span class="post-toc-number">1.</span> <span class="post-toc-text">response</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#输出数据"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">输出数据</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#文件下载"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">文件下载</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#随机图片"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">随机图片</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#刷新和缓存"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">刷新和缓存</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#请求重定向"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">请求重定向</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#request"><span class="post-toc-number">2.</span> <span class="post-toc-text">request</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#中文乱码"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">中文乱码</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#请求转发"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">请求转发</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#地址的写法"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">地址的写法</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#防盗链"><span class="post-toc-number">2.4.</span> <span class="post-toc-text">防盗链</span></a></li></ol></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#cookie"><span class="post-toc-number">1.</span> <span class="post-toc-text">cookie</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#session"><span class="post-toc-number">2.</span> <span class="post-toc-text">session</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#实现原理"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">实现原理</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#应用案例"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">应用案例</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#三个域对象"><span class="post-toc-number">3.</span> <span class="post-toc-text">三个域对象</span></a></li></ol>
 
         <!--
         <li class="mdl-menu__item">
@@ -279,7 +279,7 @@
         
     
             <p class="article-headline-p">
-                javaweb入门笔记(4)-request和response
+                javaweb入门笔记(5)-cookie和session
             </p>
         </div>
 
@@ -297,8 +297,8 @@
     </div>
     <!-- Author Name & Date -->
     <div>
-        <strong>Ac缺BFun</strong>
-        <span>4月 15, 2017</span>
+        <strong>跑的比谁都快</strong>
+        <span>8月 15, 2016</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -338,7 +338,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=javaweb入门笔记(4)-request和response&url=https://SiTao.coding.me/hexo-blog-siztao//2017/04/15/javaweb/javaweb入门笔记(4)-request和response/index.html&pic=&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=javaweb入门笔记(5)-cookie和session&url=https://SiTao.coding.me/hexo-blog-siztao//2016/08/15/javaweb/javaweb入门笔记(5)-cookie和session/index.html&pic=&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 分享到微博
             </li>
@@ -347,7 +347,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=javaweb入门笔记(4)-request和response&url=https://SiTao.coding.me/hexo-blog-siztao//2017/04/15/javaweb/javaweb入门笔记(4)-request和response/index.html&via=Ac缺BFun" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=javaweb入门笔记(5)-cookie和session&url=https://SiTao.coding.me/hexo-blog-siztao//2016/08/15/javaweb/javaweb入门笔记(5)-cookie和session/index.html&via=跑的比谁都快" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Twitter
             </li>
@@ -356,7 +356,7 @@
 
     <!-- Share Facebook -->
     
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=https://SiTao.coding.me/hexo-blog-siztao//2017/04/15/javaweb/javaweb入门笔记(4)-request和response/index.html" target="_blank">
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=https://SiTao.coding.me/hexo-blog-siztao//2016/08/15/javaweb/javaweb入门笔记(5)-cookie和session/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Facebook
             </li>
@@ -365,7 +365,7 @@
 
     <!-- Share Google+ -->
     
-        <a class="post_share-link" href="https://plus.google.com/share?url=https://SiTao.coding.me/hexo-blog-siztao//2017/04/15/javaweb/javaweb入门笔记(4)-request和response/index.html" target="_blank">
+        <a class="post_share-link" href="https://plus.google.com/share?url=https://SiTao.coding.me/hexo-blog-siztao//2016/08/15/javaweb/javaweb入门笔记(5)-cookie和session/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Google+
             </li>
@@ -389,116 +389,73 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <p><strong>Contents</strong></p>
+        <p>标签： javaweb</p>
+<hr>
+<p><strong>Contents</strong></p>
 <ul>
-<li><a href="#javaweb入门笔记4-request和response">javaweb入门笔记(4)-request和response</a><ul>
-<li><a href="#response">response</a><ul>
-<li><a href="#输出数据">输出数据</a></li>
-<li><a href="#文件下载">文件下载</a></li>
-<li><a href="#随机图片">随机图片</a></li>
-<li><a href="#刷新和缓存">刷新和缓存</a></li>
-<li><a href="#请求重定向">请求重定向</a></li>
+<li><a href="#javaweb入门笔记5-cookie和session">javaweb入门笔记(5)-cookie和session</a><ul>
+<li><a href="#cookie">cookie</a></li>
+<li><a href="#session">session</a><ul>
+<li><a href="#实现原理">实现原理</a></li>
+<li><a href="#应用案例">应用案例</a></li>
 </ul>
 </li>
-<li><a href="#request">request</a><ul>
-<li><a href="#中文乱码">中文乱码</a></li>
-<li><a href="#请求转发">请求转发</a></li>
-<li><a href="#地址的写法">地址的写法</a></li>
-<li><a href="#防盗链">防盗链</a></li>
-</ul>
-</li>
+<li><a href="#三个域对象">三个域对象</a></li>
 </ul>
 </li>
 </ul>
 <hr>
+<p>Cookie是客户端技术；Session是服务器端技术。</p>
 <p>API:</p>
 <blockquote>
 <ul>
-<li><a href="https://tomcat.apache.org/tomcat-8.0-doc/servletapi/index.html?javax/servlet/http/HttpServletResponse.html" target="_blank" rel="external">Interface HttpServletResponse</a></li>
-<li><a href="https://tomcat.apache.org/tomcat-8.0-doc/servletapi/index.html?javax/servlet/http/HttpServletRequest.html" target="_blank" rel="external">Interface HttpServletRequest</a></li>
+<li><a href="https://tomcat.apache.org/tomcat-8.0-doc/servletapi/index.html?javax/servlet/http/Cookie.html" target="_blank" rel="external">javax.servlet.http:Class Cookie</a></li>
+<li><a href="https://tomcat.apache.org/tomcat-8.0-doc/servletapi/index.html?javax/servlet/http/HttpSession.html" target="_blank" rel="external">javax.servlet.http:Interface HttpSession</a></li>
 </ul>
 </blockquote>
-<h2 id="response"><a href="#response" class="headerlink" title="response"></a>response</h2><h3 id="输出数据"><a href="#输出数据" class="headerlink" title="输出数据"></a>输出数据</h3><p>程序以什么码表输出，就一定要控制浏览器以什么码表打开。可有如下两种写法：</p>
+<h2 id="cookie"><a href="#cookie" class="headerlink" title="cookie"></a>cookie</h2><p>一些细节：</p>
 <ul>
-<li><code>response.setHeader(&quot;Content-type&quot;,&quot;text/html;charset=UTF-8&quot;)</code></li>
-<li><code>response.setContentType(&quot;text/html;charset=UTF-8&quot;)</code>(默认调用<code>setHeader</code>和<code>setCharacterEncoding</code>)</li>
+<li>一个cookie只能标识一种信息，至少含有标识该信息的名称和值</li>
+<li>浏览器一般只允许存放300个cookie，每个站点最多存放20个，每个cookie大小限制为4KB</li>
+<li>默认是会话级别cookie(存储于浏览器内存)，浏览器进程关闭则删除。有效期通过<code>maxAge</code>设置，存于硬盘，0表示删除</li>
+<li>删除cookie时，path必须一致，否则不会删除</li>
 </ul>
-<p>把分号<code>;</code>错写成逗号<code>,</code>，浏览器会提示下载</p>
-<p>用html技术的<code>&lt;meta&gt;</code>标签可以模拟一个http响应头，<code>&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=UTF-8&quot;/&gt;</code></p>
-<p>response可用<code>setCharacterEncoding</code>方法设置码表。字符流输出：<code>PrintWritet-&gt;response-&gt;浏览器</code>,<code>response-&gt;浏览器</code>默认使用<code>iso-8859</code>编码</p>
-<h3 id="文件下载"><a href="#文件下载" class="headerlink" title="文件下载"></a>文件下载</h3><p>使用<code>ServerContext</code>的<code>getRealPath</code>方法,再<code>InputStream</code>和<code>OutputStream</code></p>
-<p>如果下载文件是中文名为中文，则文件名需要经过url编码<code>URLEncoder.encode</code></p>
-<h3 id="随机图片"><a href="#随机图片" class="headerlink" title="随机图片"></a>随机图片</h3><p>使用<a href="https://docs.oracle.com/javase/8/docs/api/index.html?java/awt/image/BufferedImage.html" target="_blank" rel="external"><code>BufferedImage</code></a>在内存生成图片，再使用<a href="https://docs.oracle.com/javase/8/docs/api/index.html?javax/imageio/ImageIO.html" target="_blank" rel="external"><code>ImageIO</code></a>输出。</p>
-<p>画图使用<a href="https://docs.oracle.com/javase/8/docs/api/index.html?java/awt/Graphics.html" target="_blank" rel="external"><code>Graphics</code></a>,旋转使用<a href="https://docs.oracle.com/javase/8/docs/api/index.html?java/awt/Graphics2D.html" target="_blank" rel="external"><code>Graphics2D</code></a></p>
-<p>汉字的区间：<code>\u4e00</code>-<code>\u9fa5</code></p>
-<h3 id="刷新和缓存"><a href="#刷新和缓存" class="headerlink" title="刷新和缓存"></a>刷新和缓存</h3><ul>
-<li>刷新：一般不在servlet里加<code>refresh</code>头，而是在jsp加入<code>&lt;meta&gt;</code>头模拟。</li>
-<li>缓存：加入<code>expires</code>头,当前时间+要缓存的时长</li>
-</ul>
-<h3 id="请求重定向"><a href="#请求重定向" class="headerlink" title="请求重定向"></a>请求重定向</h3><p><strong>重定向</strong>：设置状态码和<code>location</code>头即可，或者直接使用<code>response</code>的<code>sendRedirect</code>方法。向服务器两次请求。浏览器会改变地址栏，一般适用于登录、购物等场景。</p>
-<p><strong>转发</strong>:则是调用<code>ServletContex</code>对象的<code>getRequestDispatcher</code>方法，再调用<code>forward</code>方法。向服务器一次请求，浏览器地址栏不变。</p>
-<p>一些细节：</p>
+<h2 id="session"><a href="#session" class="headerlink" title="session"></a>session</h2><p>session对象由服务器创建,一个浏览器(会话)独占一个session对象</p>
+<p>session对象由服务器创建生命周期</p>
 <ul>
-<li><code>getOutputStream</code>和<code>getWriter</code>方法跟别用于输出二进制数据、输出文本数据的<code>ServletOutputStream</code>、<code>Printwriter</code>对象，这两个方法相互排斥，只能调用其中一个，否则抛<code>IllegalStateException</code>异常。</li>
-<li>response的输出流会自己关闭。<code>Servlet</code>的<code>service</code>方法结束后，Servlet引擎会检查并调用<code>close</code>方法关闭该输出流对象。</li>
+<li>创建：调用<code>request</code>对象的<code>getSession</code>方法后才会创建session对象;<code>getSession(false)</code>只获取， 不创建</li>
+<li>销毁：默认30分钟没人使用则自动销毁。失效时间可在<code>web.xml</code>的<code>&lt;session-config&gt;</code>标签中使用<code>&lt;session-timeout&gt;</code>，单位分钟；也可调用<code>session</code>对象的<code>invalidate</code>方法销毁</li>
 </ul>
-<h2 id="request"><a href="#request" class="headerlink" title="request"></a>request</h2><ul>
-<li>URI:标识某个资源</li>
-<li>URL:标识互联网上某个资源</li>
+<h3 id="实现原理"><a href="#实现原理" class="headerlink" title="实现原理"></a>实现原理</h3><p>session基于cookie实现，将<code>JSESSIONID</code>写回浏览器，这个cookie(<code>JSESSIONID</code>)默认没设置有效期,关浏览器即销毁。可以自行回写<code>JSESSIONID</code>覆盖原cookie值</p>
+<p>示例代码片段：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">doGet</span><span class="params">(HttpServletRequest req, HttpServletResponse resp)</span> <span class="keyword">throws</span> ServletException, IOException </span>&#123;</div><div class="line">    HttpSession session = req.getSession();</div><div class="line">    String sessionid = session.getId();</div><div class="line">    Cookie cookie = <span class="keyword">new</span> Cookie(<span class="string">"JSESSIONID"</span>,sessionid);</div><div class="line">    cookie.setPath(<span class="string">"/s1"</span>);</div><div class="line">    cookie.setMaxAge(<span class="number">30</span>*<span class="number">60</span>);</div><div class="line">    resp.addCookie(cookie);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="应用案例"><a href="#应用案例" class="headerlink" title="应用案例"></a>应用案例</h3><ul>
+<li>用户登录</li>
+<li>防止表单重复提交</li>
+<li>一次性验证码的校验</li>
 </ul>
-<p>一些方法</p>
+<p><strong>小Tips</strong></p>
 <ul>
-<li><code>getRequestURI</code>用于权限拦截，访问统计</li>
-<li><code>getRemoteAddr</code>用于得到客户机IP地址</li>
-<li><code>getMethod</code>得到客户机请求方式</li>
+<li>一般大型网站不用session,使用cookie,减小服务器压力</li>
+<li>若浏览器禁用cookie,需使用url自带sessionid，相关方法:<code>encodeURL</code>和<code>encodeRedirectURL</code></li>
+<li>禁止表单重复提交：在javascript或者服务器实现。javascript防不死，用户可通过修改js、自建表单提交，刷新页面，后退等方法重复提交；服务器实现是给每个表单一个随机表单号</li>
+<li>生成表单号使用“令牌发生器”，为保证唯一性(减小重复概率)，使用单例。</li>
+<li>base64编码，三字节变四字节，每6位变8位(一字节)，高位补零，每字节最大值为63，故得名。</li>
+<li>md5，常用于保存密码(可能为防止破解会加随机数)，校验数据完整性</li>
 </ul>
-<p>requst对象获取数据的四种方式</p>
+<p>防止表单重复提交之令牌例子：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> org.iot.data;</div><div class="line"></div><div class="line"><span class="keyword">import</span> sun.misc.BASE64Encoder;</div><div class="line"><span class="keyword">import</span> java.security.MessageDigest;</div><div class="line"><span class="keyword">import</span> java.security.NoSuchAlgorithmException;</div><div class="line"><span class="keyword">import</span> java.util.Random;</div><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line"> * Created by brian on 2016/1/27.</div><div class="line"> */</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TokenProcessor</span> </span>&#123;<span class="comment">//令牌</span></div><div class="line">    <span class="comment">/**</span></div><div class="line">     * 1.构造方法私有</div><div class="line">     * 2.自己创建一个</div><div class="line">     * 3.对外暴露一个方法，允许获取上面创建的对象</div><div class="line">     */</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">private</span> <span class="title">TokenProcessor</span><span class="params">()</span></span>&#123;&#125;</div><div class="line"></div><div class="line">    <span class="keyword">private</span>  <span class="keyword">static</span> <span class="keyword">final</span> TokenProcessor instance = <span class="keyword">new</span> TokenProcessor();</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> TokenProcessor <span class="title">getInstance</span><span class="params">()</span></span>&#123;</div><div class="line">        <span class="keyword">return</span> instance;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">genetateToken</span><span class="params">()</span></span>&#123;</div><div class="line">        String token = System.currentTimeMillis()+<span class="keyword">new</span> Random().nextInt()+<span class="string">""</span>;</div><div class="line"></div><div class="line">        <span class="keyword">try</span> &#123;</div><div class="line">            MessageDigest md =  MessageDigest.getInstance(<span class="string">"md5"</span>);</div><div class="line">            <span class="keyword">byte</span> [] md5 =  md.digest(token.getBytes());</div><div class="line">            <span class="comment">//base64编码</span></div><div class="line">            BASE64Encoder encoder = <span class="keyword">new</span> BASE64Encoder();</div><div class="line">            <span class="keyword">return</span> encoder.encode(md5);</div><div class="line">        &#125; <span class="keyword">catch</span> (NoSuchAlgorithmException e) &#123;</div><div class="line">            e.printStackTrace();</div><div class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> RuntimeException(e);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="三个域对象"><a href="#三个域对象" class="headerlink" title="三个域对象"></a>三个域对象</h2><ul>
+<li>Session</li>
+<li>Request</li>
+<li>ServletContext</li>
+</ul>
+<p>容器选用经验：</p>
 <ul>
-<li><code>getParameter</code></li>
-<li><code>getParameterNames</code></li>
-<li><code>getParameterValues</code></li>
-<li><code>getParameterMap</code>(可结合JavaBean使用)</li>
+<li>数据显示完了就没用了，则选用Request</li>
+<li>数据除了显示外，稍后还会用，则选用Session</li>
+<li>数据除了显示外，不仅稍后会用，还会给别人用，则选用<code>ServletContext</code></li>
 </ul>
-<p>(<code>getInputStream</code>用于文件上传)</p>
-<h3 id="中文乱码"><a href="#中文乱码" class="headerlink" title="中文乱码"></a>中文乱码</h3><p>url后面如果有中文数据，需要编码后再提交</p>
-<p>表单提交的数据使用的码表和该页面的码表一致，而<code>getParameter</code>方法默认使用<code>ISO-8859</code>码表。</p>
-<p>解决：</p>
-<ul>
-<li>对于post提交的数据，在获取数据前要使用<code>request</code>对象的<code>setCharacterEncoding</code>设置码表。</li>
-<li>对于get提交的数据，只能手工解决。先对数据调用<code>getBytes(&quot;ISO-8859-1&quot;)</code>获取二进制字节，再用特定码表构建字符串。</li>
-<li>超链提交的中文，解决办法同get提交的数据。</li>
-</ul>
-<p><em>也可以通过改服务器配置来解决乱码问题，但一般<strong>不建议</strong>使用。</em></p>
-<ul>
-<li><code>URIEncoding</code>:改tomcat的配置文件<code>conf/server.xml</code>的连接器<code>&lt;Connector&gt;</code>中的<code>URIEncoding</code>属性</li>
-<li><code>useBodyEncodingForURI</code>:将<code>conf/server.xml</code>的连接器<code>&lt;Connector&gt;</code>中的<code>useBodyEncodingForURI</code>置为<code>true</code></li>
-</ul>
-<h3 id="请求转发"><a href="#请求转发" class="headerlink" title="请求转发"></a>请求转发</h3><p>应用场景：MVC设计模式</p>
-<ul>
-<li>model : javabean;</li>
-<li>view : jsp;</li>
-<li>controller : servlet</li>
-</ul>
-<p>使用request域对象把数据带给转发资源。调用<code>request</code>对象的<code>getRequestDispatcher</code>方法，再调用<code>forward</code>方法。一次请求，浏览器地址栏不变。</p>
-<p><code>forward</code>一些细节</p>
-<ul>
-<li>不能在关闭输出流后再调用转发，也不能调用两次，否则会抛出异常。</li>
-<li>跳转之前会清空response中的数据。即数据只是写入到缓冲区而没真正输出到客户端，则可调用<code>forward</code>方法，原来写入到缓冲区的内容被清空，但响应头字段信息保持。</li>
-</ul>
-<p><code>include</code>方法可以用于包含一些公共页面(一般不在servlet中包含)</p>
-<h3 id="地址的写法"><a href="#地址的写法" class="headerlink" title="地址的写法"></a>地址的写法</h3><p>以斜杠<code>/</code>开头。如果是给服务器用，则<code>/</code>代表当前web应用；如果给浏览器用，则<code>/</code>代表网站。</p>
-<p>例子:目录结构如下</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">mail---------------------------Web应用所在目录</div><div class="line">           |----form1.html</div><div class="line">           |----WEB-INF目录</div><div class="line">                    |---------classes目录</div><div class="line">                    |---------lib目录</div><div class="line">                    |---------web.xml</div></pre></td></tr></table></figure>
-<ol>
-<li><code>request.getRequestDispatcher(&quot;/form1.html&quot;)</code></li>
-<li><code>response.sendRedirect(&quot;mail/form1.html&quot;)</code></li>
-<li><code>this.getServletContext().getRealPath(&quot;/form1.html&quot;)</code></li>
-<li><code>this.getServletContext().getResourceAsStream(&quot;/form1.html&quot;)</code></li>
-<li><code>&lt;a href=&quot;/mail/form1.html&quot;&gt;</code></li>
-<li><code>&lt;form action=&quot;/mail/form1.html&quot;&gt;</code></li>
-</ol>
-<p>其中，1,3,4是给服务器用;2,5,6是浏览器用</p>
-<h3 id="防盗链"><a href="#防盗链" class="headerlink" title="防盗链"></a>防盗链</h3><p>读取<code>referer</code>请求头，不合要求则重定向。</p>
 <hr>
 
     
@@ -526,7 +483,7 @@
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/2017/04/15/javaweb/javaweb入门笔记(6)-JSP技术/" id="post_nav-newer" class="prev-content">
+        <a href="/2016/08/15/javaweb/javaweb入门笔记(1)-Tomcat/" id="post_nav-newer" class="prev-content">
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
                 <i class="material-icons">arrow_back</i>
             </button>
@@ -539,6 +496,14 @@
     <div class="section-spacer"></div>
 
     <!-- Next Nav -->
+    
+        <a href="/2016/09/15/javaweb/javaweb入门笔记(4)-request和response/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
     
 </nav>
 
@@ -570,7 +535,7 @@
 
     <!-- Sidebar Avatar -->
     <div class="sidebar-image">
-        <img src="/img/avatar.png" alt="Ac缺BFun's avatar">
+        <img src="/img/avatar.png" alt="跑的比谁都快's avatar">
     </div>
 
     <!-- Sidebar Email -->
@@ -624,7 +589,7 @@
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="sidebar_archives-link" href="/archives/2017/04/">四月 2017<span class="sidebar_archives-count">17</span></a>
+                <a class="sidebar_archives-link" href="/archives/2017/04/">四月 2017<span class="sidebar_archives-count">13</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/09/">九月 2016<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/08/">八月 2016<span class="sidebar_archives-count">5</span></a>
             </ul>
         </li>
         
@@ -642,7 +607,7 @@
             </a>
             <ul class="dropdown-menu">
                 <li>
-                <a class="sidebar_archives-link" href="/categories/JDK源码分析/">JDK源码分析<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/JavaWeb/">JavaWeb<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/categories/Java基础核心/">Java基础核心<span class="sidebar_archives-count">9</span></a>
+                <a class="sidebar_archives-link" href="/categories/JDK源码分析/">JDK源码分析<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/JavaWeb/">JavaWeb<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/categories/Java基础核心/">Java基础核心<span class="sidebar_archives-count">10</span></a></li><li><a class="sidebar_archives-link" href="/categories/SwordForOffer/">SwordForOffer<span class="sidebar_archives-count">1</span></a>
             </ul>
         </li>
         
